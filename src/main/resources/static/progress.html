@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Job</title>
+
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+
+    <link crossorigin="anonymous" href="style/http_cdn.jsdelivr.net_npm_bootstrap@5.0.2_dist_css_bootstrap.css"
+          rel="stylesheet">
+    <link crossorigin="anonymous" href="style/main.css"
+          rel="stylesheet">
+
+</head>
+<body style="background-image: url('img/banner-dark.png');">
+<div class="container mt-5" style="padding: 20px;">
+    <h2>
+        <img src="img/logo.png" alt="Logo" style="height: 100px;">
+        Dashboard Job
+    </h2>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Nome Job</th>
+            <th>Azione</th>
+            <th>Progresso</th>
+            <th>Avvio</th>
+            <th>Fine</th>
+            <th>Durata</th>
+        </tr>
+        </thead>
+        <tbody id="jobs-list"></tbody>
+
+    </table>
+
+    <!-- Modale per i dettagli dell'errore -->
+    <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title h4" id="errorModalLabel">Dettagli Errore</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Il messaggio di errore verrà inserito qui e viene richiamato da Dettagli Errore-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="container mt-1">
+    <footer class="text-center mt-4">
+        <div class="text-muted">Creato da [Andrei Alexandru Dabija]</div>
+    </footer>
+</div>
+
+<script src="script/http_code.jquery.com_jquery-3.5.1.js"></script>
+<script crossorigin="anonymous"
+        src="script/http_cdn.jsdelivr.net_npm_@popperjs_core@2.9.2_dist_umd_popper.js"></script>
+<script crossorigin="anonymous"
+        src="script/http_cdn.jsdelivr.net_npm_bootstrap@5.0.2_dist_js_bootstrap.js"></script>
+
+<script crossorigin="anonymous"
+        src="script/http_cdn.jsdelivr.net_npm_bootstrap@5.0.2_dist_js_bootstrap.bundle.js"></script>
+
+<script src="script/main.js"></script>
+
+</body>
+</html>

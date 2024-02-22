@@ -1,0 +1,3 @@
+# ... conf di collaudo
+
+# helm install aeroport-chart /helm -f /helm/values.coll.yaml

@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app:
+    container_name: native-linux-graal-aeroport
+    image: artifactory.io/k8s-test/namespace/com.xtremealex/aeroport:native-linux-graal-aeroport
+
+    build:
+      context: ..
+      dockerfile: docker/native.linux.Dockerfile
+    ports:
+      - "8080:8080"

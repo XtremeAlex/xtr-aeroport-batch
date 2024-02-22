@@ -1,0 +1,45 @@
+server:
+  servlet:
+    context-path: /xtr-aeroport-batch
+  port: 8081
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/local-postgres
+    #?currentSchema=aeroport
+    driverClassName: org.postgresql.Driver
+    username: postgres
+    password: postgres123
+
+    hikari:
+      connection-timeout: 30000 # Timeout di attesa per una connessione dal pool
+      minimum-idle: 4 # Numero minimo di connessioni idle nel pool
+      maximum-pool-size: 8 # Numero massimo di connessioni nel pool
+      idle-timeout: 600000 # Tempo massimo (in millisecondi) che una connessione può rimanere inattiva prima di essere chiusa
+      max-lifetime: 1800000 # Tempo massimo di vita di una connessione nel pool
+      pool-name: SpringBatchHikariCP # Nome del pool di connessioni, utile per il monitoraggio
+#      auto-commit: true # Imposta se le operazioni SQL devono essere eseguite in auto-commit
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+    #database-platform: org.hibernate.dialect.PostgreSQLDialect
+    #    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: false
+    properties:
+      hibernate:
+        default_schema: aeroport
+        format_sql: true
+#    generate-ddl: false
+
+#  sql:
+#    init:
+#      schema-locations: classpath:/org/springframework/batch/core/schema-postgresql.sql
+#      mode: never
+#      encoding: UTF-8
+
+resource:
+  dataset:
+    airports:
+      file:
+        path: dataset/airports/world-airport.json

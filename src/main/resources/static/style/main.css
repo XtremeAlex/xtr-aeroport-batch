@@ -1,0 +1,54 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Consolas', 'Hack', monospace;
+    /*background-size: cover;*/
+    /*background-repeat: no-repeat;*/
+    background-position: center;
+}
+
+.container {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+}
+
+.btn-completed {
+    background-color: green;
+    color: white;
+}
+
+.progress-bar {
+    transition: width 0.25s ease-in-out;
+}
+
+table {
+    color: black;
+}
+
+.table th, .table td {
+    padding: .25rem;
+    vertical-align: middle;
+    border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.modal-body {
+    background-color: black;
+    color: #6de86d;
+    font-size: 12px;
+    border: 2px solid white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+footer {
+    padding: 5px 0;
+    background-color: #fff;
+    color: #6c757d;
+    border-top: 1px solid #e7e7e7;
+}

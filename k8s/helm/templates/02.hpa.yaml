@@ -1,0 +1,23 @@
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+  "helm.sh/hook": post-install,post-upgrade
+  "helm.sh/hook-weight": "2"
+  name: {{ .Values.app_name }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: {{ .Values.app_name }}
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: {{ .Values.app_name }}
+  minReplicas: 1
+  maxReplicas: 2
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: {{ .Values.hpa_cpu_utilization }}

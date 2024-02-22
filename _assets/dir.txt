@@ -1,0 +1,92 @@
+.
+├── dir.txt
+├── main
+│   ├── java
+│   │   └── com
+│   │       └── xtremealex
+│   │           └── aeroport
+│   │               ├── AeroportApplication.java
+│   │               ├── common
+│   │               │   └── models
+│   │               │       ├── ErrorCode.java
+│   │               │       ├── json
+│   │               │       │   ├── AirportJson.java
+│   │               │       │   └── CountryJson.java
+│   │               │       ├── request
+│   │               │       │   └── AirportSearchRequest.java
+│   │               │       └── response
+│   │               │           ├── ResponseWrapper.java
+│   │               │           ├── ResponseWrapperBuilder.java
+│   │               │           ├── airports
+│   │               │           │   ├── AirportDTO.java
+│   │               │           │   └── AirportTypeDTO.java
+│   │               │           ├── countries
+│   │               │           │   └── CountryDTO.java
+│   │               │           └── flights
+│   │               │               └── VoloDTO.java
+│   │               ├── configuration
+│   │               │   ├── MyConfig.java
+│   │               │   └── MyConfigMvc.java
+│   │               ├── controller
+│   │               │   ├── SearchAirport.java
+│   │               │   ├── SearchAirportType.java
+│   │               │   ├── SearchCountries.java
+│   │               │   ├── SearchFlights.java
+│   │               │   └── TestController.java
+│   │               ├── entity
+│   │               │   ├── AirportEntity.java
+│   │               │   ├── VoloEntity.java
+│   │               │   ├── typological
+│   │               │   │   ├── AirportTypeTypology.java
+│   │               │   │   └── CountryTypology.java
+│   │               │   └── view
+│   │               │       └── CountryAirportCountView.java
+│   │               ├── mapper
+│   │               │   ├── IAirportMapper.java
+│   │               │   ├── IAirportTypeTypologyMapper.java
+│   │               │   └── ICountryTypologyMapper.java
+│   │               ├── repository
+│   │               │   ├── AirportRepository.java
+│   │               │   ├── AirportTypeRepository.java
+│   │               │   ├── CountryAirportRepository.java
+│   │               │   ├── CountryTypeRepository.java
+│   │               │   └── VoloRepository.java
+│   │               └── service
+│   │                   ├── IAirportService.java
+│   │                   ├── IAirportTypeService.java
+│   │                   ├── IEncryptionService.java
+│   │                   ├── impl
+│   │                   │   ├── AirportService.java
+│   │                   │   ├── AirportTypeService.java
+│   │                   │   └── EncryptionService.java
+│   │                   └── provvisorioBatchInit
+│   │                       ├── AirportDataService.java
+│   │                       └── CountryService.java
+│   └── resources
+│       ├── META-INF
+│       │   └── native-image
+│       │       ├── agent-extracted-predefined-classes
+│       │       ├── jni-config.json
+│       │       ├── predefined-classes-config.json
+│       │       ├── proxy-config.json
+│       │       ├── reflect-config.json
+│       │       ├── resource-config.json
+│       │       └── serialization-config.json
+│       ├── application.yml
+│       ├── banner.txt
+│       ├── data.sql
+│       ├── dataset
+│       │   ├── airports
+│       │   │   └── world-airport.json
+│       │   └── country
+│       │       ├── countries-flag.json
+│       │       └── world-cities.json
+│       └── schema.sql
+└── test
+    └── java
+        └── com
+            └── xtremealex
+                └── aeroport
+                    └── AeroportApplicationTests.java
+
+36 directories, 54 files
