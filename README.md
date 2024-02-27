@@ -290,15 +290,35 @@ Per utilizzare e contribuire a questo progetto, avrai bisogno di installare:
   ```
   <img src="_assets/images/native-mvn-build.png" alt="_assets/images/mvn-build-native.png" />
 
-  In ./target/<app-nativa-per-il-tuo-sistema>, in questo caso 'aeroport', per i sistemi windows sarà aeroport.exe
+  In ./target/<app-nativa-per-il-tuo-sistema>, in questo caso 'aeroport', per i sistemi windows sarà <nome>.exe
 
   <img src="_assets/images/native-macos-result-build.png" alt="_assets/images/result-build.png" />
+  <img src="_assets/images/native-windows-result-build.png" alt="_assets/native-windows-result-build.png" />
 
 
   **Avvio dell'applicazione NATIVA**
   ```
   ./target/aeroport-batch-app
   ```
+
+   **Avvio dell'applicazione NATIVA con WINDOWS**
+   ```
+   Windows 11 Ultima Patch 02/2024
+   
+   CPU Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz
+   Cores:	6
+   Processori logici:	12
+   
+   Build: 
+   Total time:  04:54 min
+   
+   Avviare il DB:
+   docker-compose -f docker/postgres.docker-compose.yml down &&  docker-compose -f docker/postgres.docker-compose.yml up
+   
+   Start App:
+   ./target/aeroport-app.exe -->   1.426
+     
+   ```
 
   **Perciò facendo un recap:**
   ```
@@ -315,7 +335,9 @@ Per utilizzare e contribuire a questo progetto, avrai bisogno di installare:
   docker run -p 8080:8080 artifactory.io/k8s-test/namespace/com.xtremealex/aeroport:0.2.0
   ```
   <img src="_assets/images/native-docker-arm-build.png" alt="_assets/images/native-docker-arm-build.png" />
-  <img src="_assets/images/native-run-docker-arm.png" alt="_assets/images/native-run-docker-arm.png" />
+  <!--<img src="_assets/images/native-run-docker-arm.png" alt="_assets/images/native-run-docker-arm.png" /> >
+  <img src="_assets/images/native-windows-run-app.png" alt="_assets/images/native-windows-run-app.png" />
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -430,16 +452,16 @@ Inserisco questi url che potrebbero essere utili:
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/XtremeAlex/xtr-aeroport-batch.svg?style=for-the-badge
-[contributors-url]: https://github.com/XtremeAlexbatch/graphs/contributors
-[dependencies-url]: https://github.com/XtremeAlexbatch/network/dependencies
-[forks-shield]: https://img.shields.io/github/forks/XtremeAlexbatch.svg?style=for-the-badge
-[forks-url]: https://github.com/XtremeAlexbatch/network/members
-[stars-shield]: https://img.shields.io/github/stars/XtremeAlexbatch.svg?style=for-the-badge
-[stars-url]: https://github.com/XtremeAlexbatch/stargazers
-[issues-shield]: https://img.shields.io/github/issues/XtremeAlexbatch.svg?style=for-the-badge
-[issues-url]: https://github.com/XtremeAlexbatch/issues
-[license-shield]: https://img.shields.io/github/license/XtremeAlexbatch.svg?style=for-the-badge
-[license-url]: https://github.com/XtremeAlexbatch/blob/develop/LICENSE
+[contributors-url]: https://github.com/XtremeAlex/xtr-aeroport-batch/graphs/contributors
+[dependencies-url]: https://github.com/XtremeAlex/xtr-aeroport-batch/network/dependencies
+[forks-shield]: https://img.shields.io/github/forks/XtremeAlex/xtr-aeroport-batch.svg?style=for-the-badge
+[forks-url]: https://github.com/XtremeAlex/xtr-aeroport-batch/network/members
+[stars-shield]: https://img.shields.io/github/stars/XtremeAlex/xtr-aeroport-batch.svg?style=for-the-badge
+[stars-url]: https://github.com/XtremeAlex/xtr-aeroport-batch/stargazers
+[issues-shield]: https://img.shields.io/github/issues/XtremeAlex/xtr-aeroport-batch.svg?style=for-the-badge
+[issues-url]: https://github.com/XtremeAlex/xtr-aeroport-batch/issues
+[license-shield]: https://img.shields.io/github/license/XtremeAlex/xtr-aeroport-batch.svg?style=for-the-badge
+[license-url]: https://github.com/XtremeAlex/xtr-aeroport-batch/blob/develop/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
 [linkedin-url]: https://www.linkedin.com/in/andrei-alexandru-dabija/
 [product-logo]: _assets/images/banner-dark.png
