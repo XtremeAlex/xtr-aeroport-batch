@@ -354,6 +354,10 @@ Per utilizzare e contribuire a questo progetto, avrai bisogno di installare:
    2. **WINDOWS** 11 (i7-10750H 64Gb RAM)
      <img src="_assets/images/windows_benchmark.png" alt="_assets/images/windows_benchmark.png" />
 
+
+   3. **MAC** Sonoma v14.2.1 (M1 16Gb RAM)
+     <img src="_assets/images/mac_benchmark.png" alt="_assets/images/mac_benchmark.png" />
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
