@@ -1,8 +1,8 @@
 version: '3'
 services:
   app:
-    container_name: native-macsilicon-graal-aeroport
-    image: artifactory.io/k8s-test/namespace/com.xtremealex/aeroport:native-macsilicon-graal-aeroport
+    container_name: native-macsilicon-graal-aeroport-batch
+    image: artifactory.io/k8s-test/namespace/com.xtremealex/aeroport-batch:native-macsilicon-graal-aeroport
 
     build:
       context: ..

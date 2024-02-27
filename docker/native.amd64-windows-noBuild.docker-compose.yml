@@ -1,0 +1,13 @@
+#IN FASE DI TEST
+version: '3'
+services:
+  app:
+    container_name: native-amd64-windows-graal-aeroport-batch
+    image: artifactory.io/k8s-test/namespace/com.xtremealex/aeroport-batch:native-amd64-windows-graal-aeroport
+
+    platform: linux/amd64 # questo sta per: -> docker run --platform linux/x86_64 <image>
+    build:
+      context: ..
+      dockerfile: docker/native.amd64-windows-noBuild.Dockerfile
+    ports:
+      - "8080:8080"

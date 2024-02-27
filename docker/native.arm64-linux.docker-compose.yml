@@ -1,8 +1,8 @@
 version: '3'
 services:
   app:
-    container_name: native-arm64-linux-graal-aeroport
-    image: artifactory.io/k8s-test/namespace/com.xtremealex/aeroport:native-arm64-linux-graal-aeroport
+    container_name: native-arm64-linux-graal-aeroport-batch
+    image: artifactory.io/k8s-test/namespace/com.xtremealex/aeroport-batch:native-arm64-linux-graal-aeroport
 
     platform: linux/arm64  # lancia docker buildx inspect --bootstrap per capire quale è la tua platform e quali puoi usare con la tua CPU
     build:

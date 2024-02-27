@@ -1,10 +1,10 @@
-app_name: myapp
-namespace: myapp-namespace
-replicas: 2
+app_name: xtr-aeroport-batch
+namespace: aeroport-namespace
+replicas: 1
 registry_target: myregistry.com
 project_name: myproject
 dockerTag: latest
-app_port: 8080
+app_port: 8081
 app_port_name: http
 limit_cpu: "500m"
 limit_memory: "512Mi"
@@ -13,6 +13,6 @@ request_memory: "256Mi"
 http_port: "8080"
 dockerRepository: my-docker-repo
 logs_storage_size: "1Gi"
-ingress_host: myapp.example.com
+ingress_host: myapp.aeroport.com
 
-# helm install aeroport-chart /helm -f /helm/values.yaml
+# helm install xtr-aeroport-batch-chart /helm -f /helm/values.yaml

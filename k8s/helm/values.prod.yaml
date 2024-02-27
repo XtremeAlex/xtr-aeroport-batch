@@ -1,3 +1,3 @@
 # ... conf di produzione
 
-#helm install aeroport-chart /helm -f /helm/values.prod.yaml
+#helm install xtr-aeroport-batch-chart /helm -f /helm/values.prod.yaml

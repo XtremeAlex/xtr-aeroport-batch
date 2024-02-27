@@ -1,0 +1,10 @@
+version: '3'
+services:
+  app:
+    container_name: linux-graal-aeroport-batch
+    image: artifactory.io/k8s-test/namespace/com.xtremealex/aeroport-batch:linux-graal-aeroport
+    build:
+      context: ..
+      dockerfile: docker/linux-noBuild.Dockerfile
+    ports:
+      - "8080:8080"

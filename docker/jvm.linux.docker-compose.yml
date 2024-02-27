@@ -1,0 +1,10 @@
+version: '3'
+services:
+  app:
+    container_name: jvm-linux-ojdk17-graal-aeroport-batch
+    image: artifactory.io/k8s-test/namespace/com.xtremealex/aeroport-batch:jvm-linux-ojdk17-graal-aeroport
+    build:
+      context: ..
+      dockerfile: docker/jvm.linux-noBuild.Dockerfile
+    ports:
+      - "8080:8080"
