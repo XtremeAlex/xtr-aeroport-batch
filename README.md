@@ -12,28 +12,27 @@
 <br />
 <div align="center">
   <a href="">
-    <img src="_assets/images/logo.png" width="300" alt="Logo">
+    <img src="_assets/images/logo.png" width="500s" alt="Logo">
   </a>
 
   <h3 align="center">Aeroport BATCH</h3>
 
   <p align="center">
-   **xtr-aeroports-batch** è un micro-servizio dedicato all'accesso delle informazioni sugli aeroporti in tutto il mondo.
+   **xtr-aeroports-batch** è un micro-servizio-batch dedicato all'importazione in un DB relazionale delle informazioni neccessrie, importandole da piu Json e migrati in vari steep verso una banca dati Relazionale.
     <br />
     <a href="https://github.com/XtremeAlex/xtr-aeroport-batch"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="">View Demo Live (in progres...)</a>
-    ·
-    <a href="/issues">Report Bug</a>
-    ·
-    <a href="/issues">Request Feature</a>
+    ·<a href="/issues">Report Bug</a>
+    ·<a href="/issues">Request Feature</a>
   </p>
 </div>
 
 
 <!-- TABLE OF CONTENTS -->
 #### ANCORA DA AGGIORNARE
+[text](_assets/dir.txt)
+
 
 <!-- ABOUT THE PROJECT -->
 ## Info sul progetto
@@ -221,7 +220,7 @@ Per utilizzare e contribuire a questo progetto, avrai bisogno di installare:
   ./target/aeroport
   ```
 
-  <img src="_assets/images/native-run-app.png" alt="_assets/images/native-run-app.png" />
+  <img src="_assets/images/native-run-docker-arm.png" alt="_assets/images/native-run-app.png" />
 
   Come si puo vedere i tempi di avvio si sono dimezzati (`4.22`), e considerate che è attivo l'init che importa i valori del json dentro l'h2.
 
@@ -249,7 +248,7 @@ Per utilizzare e contribuire a questo progetto, avrai bisogno di installare:
   docker run -p 8080:8080 artifactory.io/k8s-test/namespace/com.xtremealex/aeroport:0.2.0
   ```
   <img src="_assets/images/native-docker-arm-build.png" alt="_assets/images/native-docker-arm-build.png" />
-  <img src="_assets/images/native-run-docker-arm.png" alt="_assets/images/native-run-docker-arm.png" />
+  <img src="_assets/images/native-run-app.png" alt="_assets/images/native-run-docker-arm.png" />
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

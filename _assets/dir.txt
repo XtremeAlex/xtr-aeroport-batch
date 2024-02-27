@@ -1,92 +1,87 @@
 .
 ├── dir.txt
-├── main
-│   ├── java
-│   │   └── com
-│   │       └── xtremealex
-│   │           └── aeroport
-│   │               ├── AeroportApplication.java
-│   │               ├── common
-│   │               │   └── models
-│   │               │       ├── ErrorCode.java
-│   │               │       ├── json
-│   │               │       │   ├── AirportJson.java
-│   │               │       │   └── CountryJson.java
-│   │               │       ├── request
-│   │               │       │   └── AirportSearchRequest.java
-│   │               │       └── response
-│   │               │           ├── ResponseWrapper.java
-│   │               │           ├── ResponseWrapperBuilder.java
-│   │               │           ├── airports
-│   │               │           │   ├── AirportDTO.java
-│   │               │           │   └── AirportTypeDTO.java
-│   │               │           ├── countries
-│   │               │           │   └── CountryDTO.java
-│   │               │           └── flights
-│   │               │               └── VoloDTO.java
-│   │               ├── configuration
-│   │               │   ├── MyConfig.java
-│   │               │   └── MyConfigMvc.java
-│   │               ├── controller
-│   │               │   ├── SearchAirport.java
-│   │               │   ├── SearchAirportType.java
-│   │               │   ├── SearchCountries.java
-│   │               │   ├── SearchFlights.java
-│   │               │   └── TestController.java
-│   │               ├── entity
-│   │               │   ├── AirportEntity.java
-│   │               │   ├── VoloEntity.java
-│   │               │   ├── typological
-│   │               │   │   ├── AirportTypeTypology.java
-│   │               │   │   └── CountryTypology.java
-│   │               │   └── view
-│   │               │       └── CountryAirportCountView.java
-│   │               ├── mapper
-│   │               │   ├── IAirportMapper.java
-│   │               │   ├── IAirportTypeTypologyMapper.java
-│   │               │   └── ICountryTypologyMapper.java
-│   │               ├── repository
-│   │               │   ├── AirportRepository.java
-│   │               │   ├── AirportTypeRepository.java
-│   │               │   ├── CountryAirportRepository.java
-│   │               │   ├── CountryTypeRepository.java
-│   │               │   └── VoloRepository.java
-│   │               └── service
-│   │                   ├── IAirportService.java
-│   │                   ├── IAirportTypeService.java
-│   │                   ├── IEncryptionService.java
-│   │                   ├── impl
-│   │                   │   ├── AirportService.java
-│   │                   │   ├── AirportTypeService.java
-│   │                   │   └── EncryptionService.java
-│   │                   └── provvisorioBatchInit
-│   │                       ├── AirportDataService.java
-│   │                       └── CountryService.java
-│   └── resources
-│       ├── META-INF
-│       │   └── native-image
-│       │       ├── agent-extracted-predefined-classes
-│       │       ├── jni-config.json
-│       │       ├── predefined-classes-config.json
-│       │       ├── proxy-config.json
-│       │       ├── reflect-config.json
-│       │       ├── resource-config.json
-│       │       └── serialization-config.json
-│       ├── application.yml
-│       ├── banner.txt
-│       ├── data.sql
-│       ├── dataset
-│       │   ├── airports
-│       │   │   └── world-airport.json
-│       │   └── country
-│       │       ├── countries-flag.json
-│       │       └── world-cities.json
-│       └── schema.sql
-└── test
-    └── java
-        └── com
-            └── xtremealex
-                └── aeroport
-                    └── AeroportApplicationTests.java
+└── main
+    ├── java
+    │   └── com
+    │       └── xtremealex
+    │           └── aeroport
+    │               ├── AeroportBatchApplication.java
+    │               ├── batch
+    │               │   ├── configuration
+    │               │   │   ├── CustomAuditorAware.java
+    │               │   │   ├── MyBatchConfig.java
+    │               │   │   ├── job
+    │               │   │   │   └── JobConfig.java
+    │               │   │   └── step
+    │               │   │       └── StepConfig.java
+    │               │   ├── listeners
+    │               │   │   ├── ProgressListener.java
+    │               │   │   └── SimpleProgressListener.java
+    │               │   ├── model
+    │               │   │   ├── AirportJson.java
+    │               │   │   └── CountryJson.java
+    │               │   ├── processor
+    │               │   │   ├── AirportItemProcessor.java
+    │               │   │   └── AirportTypeItemProcessor.java
+    │               │   ├── service
+    │               │   │   ├── AirportTypeCacheService.java
+    │               │   │   ├── AsyncJobService.java
+    │               │   │   └── ProgressService.java
+    │               │   ├── tasklet
+    │               │   │   └── CountObjJsonTasklet.java
+    │               │   └── writer
+    │               │       ├── AirportItemWriter.java
+    │               │       └── AirportTypeItemWriter.java
+    │               ├── controller
+    │               │   ├── BatchController.java
+    │               │   └── SystemController.java
+    │               ├── entity
+    │               │   ├── AirportEntity.java
+    │               │   ├── VoloEntity.java
+    │               │   └── typological
+    │               │       ├── AirportTypeTypology.java
+    │               │       └── CountryTypology.java
+    │               ├── mapper
+    │               │   ├── IAirportMapper.java
+    │               │   ├── IAirportTypeTypologyMapper.java
+    │               │   └── ICountryTypologyMapper.java
+    │               └── repository
+    │                   ├── AirportRepository.java
+    │                   ├── AirportTypeRepository.java
+    │                   ├── CountryTypeRepository.java
+    │                   └── VoloRepository.java
+    └── resources
+        ├── META-INF
+        │   └── native-image
+        │       ├── jni-config.json
+        │       ├── predefined-classes-config.json
+        │       ├── proxy-config.json
+        │       ├── reflect-config.json
+        │       ├── resource-config.json
+        │       └── serialization-config.json
+        ├── application.yml
+        ├── banner.txt
+        ├── dataset
+        │   ├── airports
+        │   │   ├── world-airport.json
+        │   │   └── world-airport.json_min
+        │   └── country
+        │       ├── countries-flag.json
+        │       └── world-cities.json
+        └── static
+            ├── img
+            │   ├── banner-dark.png
+            │   ├── favicon.png
+            │   └── logo.png
+            ├── progress.html
+            ├── script
+            │   ├── http_cdn.jsdelivr.net_npm_@popperjs_core@2.9.2_dist_umd_popper.js
+            │   ├── http_cdn.jsdelivr.net_npm_bootstrap@5.0.2_dist_js_bootstrap.bundle.js
+            │   ├── http_cdn.jsdelivr.net_npm_bootstrap@5.0.2_dist_js_bootstrap.js
+            │   ├── http_code.jquery.com_jquery-3.5.1.js
+            │   └── main.js
+            └── style
+                ├── http_cdn.jsdelivr.net_npm_bootstrap@5.0.2_dist_css_bootstrap.css
+                └── main.css
 
-36 directories, 54 files
+31 directories, 54 files
