@@ -351,6 +351,8 @@ Per utilizzare e contribuire a questo progetto, avrai bisogno di installare:
    ```
    http://127.0.0.1:8081/xtr-aeroport-batch/progress
     ```
+   2. **WINDOWS** 11 (i7-10750H 64Gb RAM)
+     <img src="_assets/images/windows_benchmark.png" alt="_assets/images/windows_benchmark.png" />
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
