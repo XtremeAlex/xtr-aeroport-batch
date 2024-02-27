@@ -316,7 +316,7 @@ Per utilizzare e contribuire a questo progetto, avrai bisogno di installare:
    docker-compose -f docker/postgres.docker-compose.yml down &&  docker-compose -f docker/postgres.docker-compose.yml up
    
    Start App:
-   ./target/aeroport-app.exe -->   1.426
+   ./target/aeroport-app.exe -->   0.582s
      
    ```
 
