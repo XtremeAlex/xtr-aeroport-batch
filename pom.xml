@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.xtremealex</groupId>
-    <artifactId>aeroport</artifactId>
+    <artifactId>aeroport-batch</artifactId>
     <version>0.3.0</version>
     <name>xtr-aeroport-batch</name>
     <description>Demo Aeroport Graal project for Spring Boot</description>
