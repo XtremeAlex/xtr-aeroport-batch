@@ -1,8 +1,8 @@
 version: '3'
 services:
   app:
-    container_name: native-linux-graal-aeroport
-    image: artifactory.io/k8s-test/namespace/com.xtremealex/aeroport:native-linux-graal-aeroport
+    container_name: native-linux-graal-aeroport-batch
+    image: artifactory.io/k8s-test/namespace/com.xtremealex/aeroport-batch:native-linux-graal-aeroport
 
     build:
       context: ..

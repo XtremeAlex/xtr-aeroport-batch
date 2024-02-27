@@ -1,4 +1,4 @@
 apiVersion: v2
-name: myapp-chart
+name: xtr-aeroport-batch-chart
 version: 1.0.0
-description: Chart Helm per la mia applicazione
+description: Chart Helm del xtr-aeroport-batch

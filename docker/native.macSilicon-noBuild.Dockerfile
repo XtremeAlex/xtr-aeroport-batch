@@ -1,5 +1,8 @@
 # The deployment Image
-FROM busybox:musl
+FROM <IMG>
+
+ENV TZ="Europe/Rome"
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 WORKDIR /opt/deployment/
 
