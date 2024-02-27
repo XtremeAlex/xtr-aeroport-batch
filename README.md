@@ -28,17 +28,8 @@
   </p>
 </div>
 
-
-<!-- TABLE OF CONTENTS -->
-#### ANCORA DA AGGIORNARE
-[text](_assets/dir.txt)
-
-
 <!-- ABOUT THE PROJECT -->
 ## Info sul progetto
-
-[![Product Name Screen Shot][product-screenshot]]()
-
 Durante il poco tempo che riesco a strappare al lavoro e agli altri impegni, mi diverto a sperimentare con tecnologie e nuovi framework, e questa ne è una piccola dimostrazione.
 Questo progetto nasce come piattaforma sperimentale, l'obiettivo è fornire un set di API robuste per accedere a informazioni dettagliate sugli aeroporti e le rotte aeree a livello globale.
 Questa iniziativa è partita come un esperimento personale, si è evoluta in una solida base per testare nuovi pattern, metodologie, e tecnologie.
@@ -85,7 +76,91 @@ Per utilizzare e contribuire a questo progetto, avrai bisogno di installare:
 **Contenent**
 
 ```
-//codice
+.
+├── dir.txt
+└── main
+    ├── java
+    │   └── com
+    │       └── xtremealex
+    │           └── aeroport
+    │               ├── AeroportBatchApplication.java
+    │               ├── batch
+    │               │   ├── configuration
+    │               │   │   ├── CustomAuditorAware.java
+    │               │   │   ├── MyBatchConfig.java
+    │               │   │   ├── job
+    │               │   │   │   └── JobConfig.java
+    │               │   │   └── step
+    │               │   │       └── StepConfig.java
+    │               │   ├── listeners
+    │               │   │   ├── ProgressListener.java
+    │               │   │   └── SimpleProgressListener.java
+    │               │   ├── model
+    │               │   │   ├── AirportJson.java
+    │               │   │   └── CountryJson.java
+    │               │   ├── processor
+    │               │   │   ├── AirportItemProcessor.java
+    │               │   │   └── AirportTypeItemProcessor.java
+    │               │   ├── service
+    │               │   │   ├── AirportTypeCacheService.java
+    │               │   │   ├── AsyncJobService.java
+    │               │   │   └── ProgressService.java
+    │               │   ├── tasklet
+    │               │   │   └── CountObjJsonTasklet.java
+    │               │   └── writer
+    │               │       ├── AirportItemWriter.java
+    │               │       └── AirportTypeItemWriter.java
+    │               ├── controller
+    │               │   ├── BatchController.java
+    │               │   └── SystemController.java
+    │               ├── entity
+    │               │   ├── AirportEntity.java
+    │               │   ├── VoloEntity.java
+    │               │   └── typological
+    │               │       ├── AirportTypeTypology.java
+    │               │       └── CountryTypology.java
+    │               ├── mapper
+    │               │   ├── IAirportMapper.java
+    │               │   ├── IAirportTypeTypologyMapper.java
+    │               │   └── ICountryTypologyMapper.java
+    │               └── repository
+    │                   ├── AirportRepository.java
+    │                   ├── AirportTypeRepository.java
+    │                   ├── CountryTypeRepository.java
+    │                   └── VoloRepository.java
+    └── resources
+        ├── META-INF
+        │   └── native-image
+        │       ├── jni-config.json
+        │       ├── predefined-classes-config.json
+        │       ├── proxy-config.json
+        │       ├── reflect-config.json
+        │       ├── resource-config.json
+        │       └── serialization-config.json
+        ├── application.yml
+        ├── banner.txt
+        ├── dataset
+        │   ├── airports
+        │   │   ├── world-airport.json
+        │   │   └── world-airport.json_min
+        │   └── country
+        │       ├── countries-flag.json
+        │       └── world-cities.json
+        └── static
+            ├── img
+            │   ├── banner-dark.png
+            │   ├── favicon.png
+            │   └── logo.png
+            ├── progress.html
+            ├── script
+            │   ├── http_cdn.jsdelivr.net_npm_@popperjs_core@2.9.2_dist_umd_popper.js
+            │   ├── http_cdn.jsdelivr.net_npm_bootstrap@5.0.2_dist_js_bootstrap.bundle.js
+            │   ├── http_cdn.jsdelivr.net_npm_bootstrap@5.0.2_dist_js_bootstrap.js
+            │   ├── http_code.jquery.com_jquery-3.5.1.js
+            │   └── main.js
+            └── style
+                ├── http_cdn.jsdelivr.net_npm_bootstrap@5.0.2_dist_css_bootstrap.css
+                └── main.css
 ```
 
 ### Compilazione
@@ -105,15 +180,20 @@ Per utilizzare e contribuire a questo progetto, avrai bisogno di installare:
    mvn clean package -DskipTests
    ```
    <img src="_assets/images/mvn-build.png" alt="_assets/images/mvn-build.png"/>
+3. Esecuzione di del db:
+   ```
+   docker-compose -f docker/postgres.docker-compose.yml down &&  docker-compose -f docker/postgres.docker-compose.yml up
+   ```
+   <img src="_assets/images/db-run-postgressql.png" alt="_assets/images/db-run-postgressql.png"/>   
 
-3. Ora puoi avviarlo eseguendo:
+4. Ora puoi avviarlo eseguendo:
    ```
    java -jar ./target/aeroport-<version>.jar
    ```
    <img src="_assets/images/run-by-graal-jdk17.png" alt="_assets/images/graal-jdk17-start-jar.png"/>
 
 
-4. Generare file necessari per la native-image:
+5. Generare file necessari per la native-image:
 
    Ci vorrà un po' se si hanno configurazioni particolari come nel mio caso. Ma è una situazione eccezionale.
 
@@ -123,7 +203,7 @@ Per utilizzare e contribuire a questo progetto, avrai bisogno di installare:
    <img src="_assets/images/run-agentlib.png" alt="_assets/images/run-agentlib.png" />
 
 
-5. Compilare Nativamente un Imagine:
+6. Compilare Nativamente un Imagine:
 
    Sto usando un'Apple M1 come CPU, che è il primo System on a chip progettato da Apple Inc. in architettura RISC su base ARM (Aarch64)
    Nel mio progetto ci sono i profili adeguati per la diversa architettura della propria macchina.
@@ -217,21 +297,8 @@ Per utilizzare e contribuire a questo progetto, avrai bisogno di installare:
 
   **Avvio dell'applicazione NATIVA**
   ```
-  ./target/aeroport
+  ./target/aeroport-batch-app
   ```
-
-  <img src="_assets/images/native-run-docker-arm.png" alt="_assets/images/native-run-app.png" />
-
-  Come si puo vedere i tempi di avvio si sono dimezzati (`4.22`), e considerate che è attivo l'init che importa i valori del json dentro l'h2.
-
-  Se procediamo disabilitando l'init abbiamo una differenza immensa della durata di avvio dell'applicazione con benefici assoluti in un'ambiente cloud.
-  no-init `1.507 seconds`
-
-  <img src="_assets/images/run-no-init-by-graal-jdk17.png" alt="_assets/images/run-no-init-by-graal-jdk17.png" />
-
-  native no-init `0.151 seconds`, **si avvia 10 vole piu velocemente** e usando meno risorse.
-
-  <img src="_assets/images/native-run-no-init-by-graal-jdk17.png" alt="_assets/images/native-run-no-init-by-graal-jdk17.png" />
 
   **Perciò facendo un recap:**
   ```
@@ -248,7 +315,7 @@ Per utilizzare e contribuire a questo progetto, avrai bisogno di installare:
   docker run -p 8080:8080 artifactory.io/k8s-test/namespace/com.xtremealex/aeroport:0.2.0
   ```
   <img src="_assets/images/native-docker-arm-build.png" alt="_assets/images/native-docker-arm-build.png" />
-  <img src="_assets/images/native-run-app.png" alt="_assets/images/native-run-docker-arm.png" />
+  <img src="_assets/images/native-run-docker-arm.png" alt="_assets/images/native-run-docker-arm.png" />
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -258,29 +325,9 @@ Per utilizzare e contribuire a questo progetto, avrai bisogno di installare:
 
 1. Controller:
 
-   1. getAirportsBy
+   1. HOME PAGE
    ```
-   @GetMapping("/getAirportsBy")
-    public ResponseEntity<?> getAirportsBy(@RequestParam(required = false) Set<String> types,
-                                          @RequestParam(required = false) String isoCountry,
-                                          @RequestParam(required = false) String name,
-                                          @RequestParam(defaultValue = "0") int pageNumber,
-                                          @RequestParam(defaultValue = "12") int pageSize,
-                                          @RequestParam(required = false) String sortField,
-                                          @RequestParam(defaultValue = "ASC") String sortDir) {
-                                          < code... >
-    }
-                                        
-    URL: http://localhost:8080/xtr-aeroport/getAirportsBy?pageNumber=0&pageSize=4&sortField=name&types=1,2,3,4,5,6,7,8,9
-    ```
-   2. searchAirports
-     ```
-    @PostMapping("/searchAirports")
-    public ResponseEntity<?> searchAirports(@RequestBody AirportSearchRequest searchRequest) {                      
-                                          < code... >                              
-    }
-                                        
-    URL: http://localhost:8080/xtr-aeroport/searchAirports
+   http://127.0.0.1:8080/progress
     ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -294,9 +341,10 @@ Per utilizzare e contribuire a questo progetto, avrai bisogno di installare:
 - [x] Creare Verticale Batch Airport
 - [x] Creare Controller
 - [x] Creare HTML 
-- [ ] Creare tutti i Dockerfile e Docker-Compose per
-    - [ ] Graal JDK17
-    - [ ] Graal JDK17 (nativo)
+- [x] Creare tutti i Dockerfile e Docker-Compose per
+    - [x] Graal JDK17
+    - [x] Graal JDK17 (nativo mac)
+    - [x] Graal JDK17 (nativo windows)
     - [ ] OpenJDK17
     - [ ] altri...
 - [ ] Testare il tutto riportando le Statistiche
@@ -381,17 +429,17 @@ Inserisco questi url che potrebbero essere utili:
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/XtremeAlex/xtr-aeroport-ms.svg?style=for-the-badge
-[contributors-url]: https://github.com/XtremeAlex/xtr-aeroport-ms/graphs/contributors
-[dependencies-url]: https://github.com/XtremeAlex/xtr-aeroport-ms/network/dependencies
-[forks-shield]: https://img.shields.io/github/forks/XtremeAlex/xtr-aeroport-ms.svg?style=for-the-badge
-[forks-url]: https://github.com/XtremeAlex/xtr-aeroport-ms/network/members
-[stars-shield]: https://img.shields.io/github/stars/XtremeAlex/xtr-aeroport-ms.svg?style=for-the-badge
-[stars-url]: https://github.com/XtremeAlex/xtr-aeroport-ms/stargazers
-[issues-shield]: https://img.shields.io/github/issues/XtremeAlex/xtr-aeroport-ms.svg?style=for-the-badge
-[issues-url]: https://github.com/XtremeAlex/xtr-aeroport-ms/issues
-[license-shield]: https://img.shields.io/github/license/XtremeAlex/xtr-aeroport-ms.svg?style=for-the-badge
-[license-url]: https://github.com/XtremeAlex/xtr-aeroport-ms/blob/develop/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/XtremeAlex/xtr-aeroport-batch.svg?style=for-the-badge
+[contributors-url]: https://github.com/XtremeAlexbatch/graphs/contributors
+[dependencies-url]: https://github.com/XtremeAlexbatch/network/dependencies
+[forks-shield]: https://img.shields.io/github/forks/XtremeAlexbatch.svg?style=for-the-badge
+[forks-url]: https://github.com/XtremeAlexbatch/network/members
+[stars-shield]: https://img.shields.io/github/stars/XtremeAlexbatch.svg?style=for-the-badge
+[stars-url]: https://github.com/XtremeAlexbatch/stargazers
+[issues-shield]: https://img.shields.io/github/issues/XtremeAlexbatch.svg?style=for-the-badge
+[issues-url]: https://github.com/XtremeAlexbatch/issues
+[license-shield]: https://img.shields.io/github/license/XtremeAlexbatch.svg?style=for-the-badge
+[license-url]: https://github.com/XtremeAlexbatch/blob/develop/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
 [linkedin-url]: https://www.linkedin.com/in/andrei-alexandru-dabija/
 [product-logo]: _assets/images/banner-dark.png
