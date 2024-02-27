@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>ANCORA DA AGGIORNARE</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <p><a name="readme-top"></a></p>
+<p><a href="https://github.com/XtremeAlex/xtr-aeroport-ms/graphs/contributors"><img src="https://img.shields.io/github/contributors/XtremeAlex/xtr-aeroport-ms.svg?style=for-the-badge" alt="Contributors"></a>
+<a href="https://github.com/XtremeAlex/xtr-aeroport-ms/network/dependencies"><img src="https://img.shields.io/badge/Apache%20Maven-C71A36?style=for-the-badge&amp;logo=Apache%20Maven&amp;logoColor=white" alt="Dependency Graph"></a>
+<a href="https://github.com/XtremeAlex/xtr-aeroport-ms/network/members"><img src="https://img.shields.io/github/forks/XtremeAlex/xtr-aeroport-ms.svg?style=for-the-badge" alt="Forks"></a>
+<a href="https://github.com/XtremeAlex/xtr-aeroport-ms/stargazers"><img src="https://img.shields.io/github/stars/XtremeAlex/xtr-aeroport-ms.svg?style=for-the-badge" alt="Stargazers"></a>
+<a href="https://github.com/XtremeAlex/xtr-aeroport-ms/issues"><img src="https://img.shields.io/github/issues/XtremeAlex/xtr-aeroport-ms.svg?style=for-the-badge" alt="Issues"></a>
+<a href="https://github.com/XtremeAlex/xtr-aeroport-ms/blob/develop/LICENSE"><img src="https://img.shields.io/github/license/XtremeAlex/xtr-aeroport-ms.svg?style=for-the-badge" alt="License"></a>
+<a href="https://www.linkedin.com/in/andrei-alexandru-dabija/"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&amp;logo=linkedin&amp;logoColor=white" alt="LinkedIn"></a></p>
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="">
+    <img src="file:////Users/macbookpro/_DEV/Personale/github/xtr-aeroport-batch/_assets/images/logo.png" width="300" alt="Logo">
+  </a>
+  <h3 align="center">Aeroport BATCH</h3>
+  <p align="center">
+   **xtr-aeroports-batch** è un micro-servizio dedicato all'accesso delle informazioni sugli aeroporti in tutto il mondo.
+    <br />
+    <a href="https://github.com/XtremeAlex/xtr-aeroport-batch"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="">View Demo Live (in progres...)</a>
+    ·
+    <a href="/issues">Report Bug</a>
+    ·
+    <a href="/issues">Request Feature</a>
+  </p>
+</div>
+<!-- TABLE OF CONTENTS -->
+<h4 id="ancora-da-aggiornare">ANCORA DA AGGIORNARE</h4>
+<!-- ABOUT THE PROJECT -->
+<h2 id="info-sul-progetto">Info sul progetto</h2>
+<p><a href=""><img src="file:////Users/macbookpro/_DEV/Personale/github/xtr-aeroport-batch/_assets/images/banner.png" alt="Product Name Screen Shot"></a></p>
+<p>Durante il poco tempo che riesco a strappare al lavoro e agli altri impegni, mi diverto a sperimentare con tecnologie e nuovi framework, e questa ne è una piccola dimostrazione.
+Questo progetto nasce come piattaforma sperimentale, l'obiettivo è fornire un set di API robuste per accedere a informazioni dettagliate sugli aeroporti e le rotte aeree a livello globale.
+Questa iniziativa è partita come un esperimento personale, si è evoluta in una solida base per testare nuovi pattern, metodologie, e tecnologie.</p>
+<p>Questo è solo uno dei numerosi moduli che prevedo di rilasciare, con l'intento di condividerli e arricchirli attraverso il contributo della community.</p>
+<h3 id="invito-alla-collaborazione">Invito alla Collaborazione</h3>
+<p>Il contributo di idee, codice e feedback è sempre benvenuto e incoraggiato per diversi motivi:</p>
+<ul>
+<li>Sperimentare con Nuove Tecnologie
+<ul>
+<li>Questo progetto mette alla prova le proprie competenze in un contesto realistico.</li>
+</ul>
+</li>
+<li>Crescita Collettiva
+<ul>
+<li>Collaborando, possiamo imparare gli uni dagli altri, scambiare idee e crescere professionalmente insieme.</li>
+</ul>
+</li>
+<li>Base per Sviluppi Futuri
+<ul>
+<li>Il progetto è strutturato seguendo le best practice, rendendolo un ottimo punto di partenza per i tuoi sviluppi futuri.</li>
+<li>L'approccio &quot;Enterprise Like&quot; garantisce che le soluzione sia di alta qualità e pronta per l'uso in contesti aziendali.</li>
+</ul>
+</li>
+</ul>
+<p>Grazie a tutti quelli che hanno o vorranno contribuire ad espandere qusto progetto.</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<h3 id="stack-tecnologico">Stack Tecnologico</h3>
+<p>Le tecnologie/framework e SO usati:</p>
+<ul>
+<li><a href="https://wikipedia.org/wiki/Java_(programming_language)"><img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&amp;logo=openjdk&amp;logoColor=white" alt="Java"></a></li>
+<li><a href="https://spring.io"><img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&amp;logo=spring&amp;logoColor=white" alt="Spring"></a></li>
+<li><a href="https://wikipedia.org/wiki/Windows10"><img src="https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&amp;logo=windows&amp;logoColor=white" alt="Windows"></a></li>
+<li><a href="https://wikipedia.org/wiki/Linux"><img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&amp;logo=linux&amp;logoColor=black" alt="Linux"></a></li>
+<li><a href="https://wikipedia.org/wiki/MacOS"><img src="https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&amp;logo=apple&amp;logoColor=white" alt="Macos"></a></li>
+<li><a href="https://img.shields.io/github/issues/XtremeAlex/"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&amp;logo=github&amp;logoColor=white" alt="GitHub"></a></li>
+</ul>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- GETTING STARTED -->
+<h2 id="getting-started">Getting Started</h2>
+<p>Questo progetto è configurato per usare Maven per la gestione delle dipendenze e la compilazione.
+È sviluppato con Spring 3 e Java 17 e può essere facilmente avviato e testato in un ambiente locale.</p>
+<h3 id="prerequisiti">Prerequisiti</h3>
+<p>Per utilizzare e contribuire a questo progetto, avrai bisogno di installare:</p>
+<ul>
+<li>Git (2.43.0)</li>
+<li>Java OJDK (Graal Versione 17)</li>
+<li>Maven (Apache Maven 3.9.6)</li>
+</ul>
+<p><strong>Contenent</strong></p>
+<pre><code>//codice
+</code></pre>
+<h3 id="compilazione">Compilazione</h3>
+<p><strong>Clonare il Repository</strong></p>
+<ol>
+<li>
+<p>Per iniziare, clona il repository <code>xtr-aeroports-batch</code> sul tuo computer locale usando Git.
+Apri il terminale e esegui il seguente comando:</p>
+<pre><code>git clone https://&lt;repository&gt;/xtr-aeroports-batch.git cd
+xtr-aeroports-batch
+</code></pre>
+</li>
+<li>
+<p>Una volta clonato il repository, puoi compilare il progetto utilizzando Maven.
+Esegui il seguente comando nella directory radice del progetto:</p>
+<pre><code>mvn clean package -DskipTests
+</code></pre>
+<img src="file:////Users/macbookpro/_DEV/Personale/github/xtr-aeroport-batch/_assets/images/mvn-build.png" alt="_assets/images/mvn-build.png"/>
+</li>
+<li>
+<p>Ora puoi avviarlo eseguendo:</p>
+<pre><code>java -jar ./target/aeroport-&lt;version&gt;.jar
+</code></pre>
+<img src="file:////Users/macbookpro/_DEV/Personale/github/xtr-aeroport-batch/_assets/images/run-by-graal-jdk17.png" alt="_assets/images/graal-jdk17-start-jar.png"/>
+</li>
+<li>
+<p>Generare file necessari per la native-image:</p>
+<p>Ci vorrà un po' se si hanno configurazioni particolari come nel mio caso. Ma è una situazione eccezionale.</p>
+<pre><code>java -agentlib:native-image-agent=config-output-dir=./src/main/resources/META-INF/native-image -jar ./target/*.jar com.xtremealex.aeroport.AeroportApplication
+</code></pre>
+<img src="file:////Users/macbookpro/_DEV/Personale/github/xtr-aeroport-batch/_assets/images/run-agentlib.png" alt="_assets/images/run-agentlib.png" />
+</li>
+<li>
+<p>Compilare Nativamente un Imagine:</p>
+<p>Sto usando un'Apple M1 come CPU, che è il primo System on a chip progettato da Apple Inc. in architettura RISC su base ARM (Aarch64)
+Nel mio progetto ci sono i profili adeguati per la diversa architettura della propria macchina.
+<code>farò un approfondimento in seguito</code></p>
+<p>Quasi tutte le funzionalità di graal sono supportate su ARM64, ad'eccezione delle limitazioni descritte di seguito.
+<a href="https://www.graalvm.org/22.0/reference-manual/native-image/ARM64/">www.graalvm.org</a></p>
+<pre><code> -R:[+|-]WriteableCodeCache: deve essere disabilitato.
+ --libc=&lt;value&gt;: musl non è supportato.
+ --gc=&lt;value&gt;: Il Garbage Collector G1 ( G1) non è supportato.
+</code></pre>
+<p>Ogni opzione ha uno scopo specifico per ottimizzare e configurare la compilazione. (Nel .POM)</p>
+<pre><code>&lt;plugin&gt;
+ &lt;groupId&gt;org.graalvm.buildtools&lt;/groupId&gt;
+  &lt;artifactId&gt;native-maven-plugin&lt;/artifactId&gt;
+   &lt;configuration&gt;
+    &lt;mainClass&gt;${mainClass}&lt;/mainClass&gt;
+     &lt;buildArgs&gt;
+      &lt;arg&gt;
+       --verbose --&gt; Abilita la stampa di messaggi dettagliati durante il processo di compilazione. È utile per il debug e per capire meglio come procede la compilazione.
+       -Dspring.aot.enabled=true --&gt; Abilita il supporto per l'ottimizzazione Ahead-of-Time (AOT) di Spring, che migliora le prestazioni di avvio e riduce l'uso della memoria.
+       -H:TraceClassInitialization=true --&gt; Traccia l'inizializzazione delle classi durante la compilazione. Questo aiuta a identificare le classi che potrebbero causare problemi durante la compilazione nativa.
+       -H:+ReportExceptionStackTraces --&gt; Stampa la traccia dello stack delle eccezioni in caso di errori durante la compilazione.
+       -H:Name=aeroport --&gt; Imposta il nome del file eseguibile finale.
+       -H:DashboardDump=aeroport-dump --&gt; Specifica il nome del file dump per il dashboard di GraalVM.
+       -H:+DashboardAll --&gt; Abilita la raccolta di tutti i dati per il dashboard di GraalVM.
+       -H:Class=com.xtremealex.aeroport.AeroportApplication
+       --initialize-at-build-time=org.slf4j.LoggerFactory,ch.qos.logback,org.slf4j.MDC,org.slf4j.impl.StaticLoggerBinder --&gt;  Elenca le classi o i pacchetti che devono essere inizializzati al momento della compilazione, anziché a runtime. Ciò può migliorare le prestazioni di avvio.
+       --initialize-at-run-time=framework --&gt; In caso si usi un framework personalizzato deve essere inizializzato a runtime, non durante la compilazione.
+       -Dspring.graal.remove-unused-autoconfig=true --&gt; Rimuove le configurazioni automatiche non utilizzate per ridurre la dimensione dell'immagine nativa.
+       -Dspring.graal.remove-yaml-support=true --&gt; Disabilita il supporto per i file YAML per ridurre ulteriormente la dimensione dell'immagine.
+      &lt;/arg&gt; 
+   ...   
+</code></pre>
+<p>Per risolvere i problemi di Reflection bisogna di lanciare prima di qualsiasi compilazione nativa:</p>
+<pre><code>java -agentlib:native-image-agent=config-output-dir=./src/main/resources/META-INF/native-image -jar ./target/*.jar com.xtremealex.aeroport.AeroportApplication
+</code></pre>
+<p>OPPURE</p>
+<pre><code>java -agentlib:native-image-agent=config-output-dir=./configs/native-image -jar ./target/*.jar com.xtremealex.aeroport.AeroportApplication  
+</code></pre>
+<p>Il plugin native-image-agent genera diversi file .json, ognuno dei quali contiene informazioni specifiche su un aspetto del codice che deve essere compilato.</p>
+<pre><code>   &lt;buildArg&gt;-H:ReflectionConfigurationFiles=configs/native-image/reflect-config.json&lt;/buildArg&gt;
+   &lt;buildArg&gt;-H:JNIConfigurationFiles=configs/native-image/jni-config.json&lt;/buildArg&gt;
+   &lt;buildArg&gt;-H:DynamicProxyConfigurationFiles=configs/native-image/proxy-config.json&lt;/buildArg&gt;
+   &lt;buildArg&gt;-H:ResourceConfigurationFiles=configs/native-image/resource-config.json&lt;/buildArg&gt;
+   &lt;buildArg&gt;-H:SerializationConfigurationFiles=configs/native-image/serialization-config.json&lt;/buildArg&gt;
+</code></pre>
+<p>Se si crea una folder sotto resources META-INF.native-image non serve aggiungere i buildArgs, di default li cerca dentro resources/META-INF/native-image</p>
+<pre><code>&lt;/buildArgs&gt;
+              &lt;agent&gt;
+                  &lt;enabled&gt;true&lt;/enabled&gt;
+                  &lt;defaultMode&gt;Standard&lt;/defaultMode&gt;
+                  &lt;options&gt;
+                      &lt;trackReflectionMetadata&gt;true&lt;/trackReflectionMetadata&gt;
+                  &lt;/options&gt;
+                  &lt;metadataCopy&gt;
+                      &lt;disabledStages&gt;
+                          &lt;stage&gt;true&lt;/stage&gt;
+                      &lt;/disabledStages&gt;
+                      &lt;merge&gt;true&lt;/merge&gt;
+                      &lt;outputDirectory&gt;/tmp/native-image&lt;/outputDirectory&gt;
+                  &lt;/metadataCopy&gt;
+              &lt;/agent&gt;
+              --&gt;
+          &lt;/configuration&gt;
+      &lt;/plugin&gt;        
+...
+</code></pre>
+</li>
+</ol>
+<p>A valle delle configurazioni sul pom, procedere con la compilazione nativa:</p>
+<pre><code>mvn package -DskipTests -Pnative
+</code></pre>
+  <img src="file:////Users/macbookpro/_DEV/Personale/github/xtr-aeroport-batch/_assets/images/native-mvn-build.png" alt="_assets/images/mvn-build-native.png" />
+<p>In ./target/<app-nativa-per-il-tuo-sistema>, in questo caso 'aeroport', per i sistemi windows sarà aeroport.exe</p>
+  <img src="file:////Users/macbookpro/_DEV/Personale/github/xtr-aeroport-batch/_assets/images/native-macos-result-build.png" alt="_assets/images/result-build.png" />
+<p><strong>Avvio dell'applicazione NATIVA</strong></p>
+<pre><code>./target/aeroport
+</code></pre>
+  <img src="file:////Users/macbookpro/_DEV/Personale/github/xtr-aeroport-batch/_assets/images/native-run-app.png" alt="_assets/images/native-run-app.png" />
+<p>Come si puo vedere i tempi di avvio si sono dimezzati (<code>4.22</code>), e considerate che è attivo l'init che importa i valori del json dentro l'h2.</p>
+<p>Se procediamo disabilitando l'init abbiamo una differenza immensa della durata di avvio dell'applicazione con benefici assoluti in un'ambiente cloud.
+no-init <code>1.507 seconds</code></p>
+  <img src="file:////Users/macbookpro/_DEV/Personale/github/xtr-aeroport-batch/_assets/images/run-no-init-by-graal-jdk17.png" alt="_assets/images/run-no-init-by-graal-jdk17.png" />
+<p>native no-init <code>0.151 seconds</code>, <strong>si avvia 10 vole piu velocemente</strong> e usando meno risorse.</p>
+  <img src="file:////Users/macbookpro/_DEV/Personale/github/xtr-aeroport-batch/_assets/images/native-run-no-init-by-graal-jdk17.png" alt="_assets/images/native-run-no-init-by-graal-jdk17.png" />
+<p><strong>Perciò facendo un recap:</strong></p>
+<pre><code>mvn clean
+mvn package -DskipTests
+java -agentlib:native-image-agent=config-output-dir=src/main/resources/META-INF/native-image -jar ./target/*.jar com.xtremealex.aeroport.AeroportApplication
+mvn package -DskipTests -Pnative
+./target/aeroport
+</code></pre>
+<p>Si può usare anche docker per effettuare una build:</p>
+<pre><code>mvn package -DskipTests -Pnative &amp;&amp; mvn package -DskipTests -Pdocker-m1-arm
+docker run -p 8080:8080 artifactory.io/k8s-test/namespace/com.xtremealex/aeroport:0.2.0
+</code></pre>
+  <img src="file:////Users/macbookpro/_DEV/Personale/github/xtr-aeroport-batch/_assets/images/native-docker-arm-build.png" alt="_assets/images/native-docker-arm-build.png" />
+  <img src="file:////Users/macbookpro/_DEV/Personale/github/xtr-aeroport-batch/_assets/images/native-run-docker-arm.png" alt="_assets/images/native-run-docker-arm.png" />
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- USAGE EXAMPLES -->
+<h2 id="play--test">Play &amp; Test</h2>
+<ol>
+<li>
+<p>Controller:</p>
+<ol>
+<li>getAirportsBy</li>
+</ol>
+<pre><code>@GetMapping(&quot;/getAirportsBy&quot;)
+ public ResponseEntity&lt;?&gt; getAirportsBy(@RequestParam(required = false) Set&lt;String&gt; types,
+                                       @RequestParam(required = false) String isoCountry,
+                                       @RequestParam(required = false) String name,
+                                       @RequestParam(defaultValue = &quot;0&quot;) int pageNumber,
+                                       @RequestParam(defaultValue = &quot;12&quot;) int pageSize,
+                                       @RequestParam(required = false) String sortField,
+                                       @RequestParam(defaultValue = &quot;ASC&quot;) String sortDir) {
+                                       &lt; code... &gt;
+ }
+                                     
+ URL: http://localhost:8080/xtr-aeroport/getAirportsBy?pageNumber=0&amp;pageSize=4&amp;sortField=name&amp;types=1,2,3,4,5,6,7,8,9
+</code></pre>
+<ol start="2">
+<li>searchAirports</li>
+</ol>
+<pre><code>@PostMapping(&quot;/searchAirports&quot;)
+public ResponseEntity&lt;?&gt; searchAirports(@RequestBody AirportSearchRequest searchRequest) {                      
+                                     &lt; code... &gt;                              
+}
+                                   
+URL: http://localhost:8080/xtr-aeroport/searchAirports
+</code></pre>
+</li>
+</ol>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- ROADMAP -->
+<h2 id="roadmap">Roadmap</h2>
+<ul class="contains-task-list">
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Creare Verticale Batch AirportType</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Creare Verticale Batch Airport</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Creare Controller</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox" checked=""type="checkbox"> Creare HTML</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Creare tutti i Dockerfile e Docker-Compose per
+<ul class="contains-task-list">
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Graal JDK17</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Graal JDK17 (nativo)</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> OpenJDK17</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> altri...</li>
+</ul>
+</li>
+<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> Testare il tutto riportando le Statistiche</li>
+</ul>
+<p>Consulta <a href="https://github.com/XtremeAlex/xtr-aeroport-batch/issues">open issues</a> per una lista completa delle funzionalità proposte (bug e feature).
+s</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- CONTRIBUTING -->
+<h2 id="aiutami">Aiutami</h2>
+<p>L'aiuto di tutti rende la comunità open source un luogo incredibile per imparare, ispirarsi e creare.
+Qualsiasi contributo tu possa fornire è <strong>enormemente apprezzato</strong>.</p>
+<p>Se hai un suggerimento che potrebbe migliorare questo progetto, per favore effettua un fork del repository e crea una pull request.
+Puoi anche semplicemente aprire un problema con il tag &quot;bug&quot;.</p>
+<p>Non dimenticare di mettere una stella al progetto!
+Grazie ancora!</p>
+<h2 id="contributing">Contributing</h2>
+<p>Contributions are what make the open source community such an amazing place to learn, inspire, and create.
+Any contributions you make are <strong>greatly appreciated</strong>.</p>
+<p>If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag &quot;bug&quot;.</p>
+<p>Don't forget to give the project a star!
+Thanks again!</p>
+<h2 id="git-command">Git Command</h2>
+<ol>
+<li>Fork the Project</li>
+<li>Create your Feature Branch (<code>git checkout -b feature/SexToysFeature</code>)</li>
+<li>Commit your Changes (<code>git commit -m 'Add some SexToysFeature'</code>)</li>
+<li>Push to the Branch (<code>git push origin feature/SexToysFeature</code>)</li>
+<li>Open a Pull Request</li>
+</ol>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- LICENSE -->
+<h2 id="license">License</h2>
+<p>Distributed under the Apache License. See <code>LICENSE</code> for more information.</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- CONTACT -->
+<h2 id="contact">Contact</h2>
+<p>Andrei Alexandru Dabija - <a href="https://www.linkedin.com/in/andrei-alexandru-dabija/">@linkedin</a> - /andrei-alexandru-dabija</p>
+<p>GitHub Link: <a href="https://github.com/XtremeAlex">https://github.com/XtremeAlex</a></p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- ACKNOWLEDGMENTS -->
+<h2 id="ringraziamenti">Ringraziamenti</h2>
+<p>Inserisco questi url che potrebbero essere utili:</p>
+<ul>
+<li><a href="https://choosealicense.com">Choose an Open Source License</a></li>
+<li><a href="https://www.webpagefx.com/tools/emoji-cheat-sheet">GitHub Emoji Cheat Sheet</a></li>
+<li><a href="https://flexbox.malven.co/">Malven's Flexbox Cheatsheet</a></li>
+<li><a href="https://grid.malven.co/">Malven's Grid Cheatsheet</a></li>
+<li><a href="https://shields.io">Img Shields</a></li>
+<li><a href="https://pages.github.com">GitHub Pages</a></li>
+<li><a href="https://fontawesome.com">Font Awesome</a></li>
+<li><a href="https://react-icons.github.io/react-icons/search">React Icons</a></li>
+</ul>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>
