@@ -192,6 +192,7 @@ Per utilizzare e contribuire a questo progetto, avrai bisogno di installare:
    ```
    <img src="_assets/images/run-by-graal-jdk17.png" alt="_assets/images/graal-jdk17-start-jar.png"/>
 
+   accedi da un browser con url: http://localhost:8081/xtr-aeroport-batch
 
 5. Generare file necessari per la native-image:
 

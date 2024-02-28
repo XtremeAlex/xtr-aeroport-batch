@@ -1,5 +1,7 @@
 package com.xtremealex.aeroport;
 
+import com.xtremealex.aeroport.batch.model.AirportJson;
+import org.springframework.aot.hint.annotation.RegisterReflectionForBinding;
 import org.springframework.batch.core.*;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.batch.core.repository.JobExecutionAlreadyRunningException;
@@ -19,6 +21,7 @@ import java.util.Date;
 @SpringBootApplication
 @EnableJpaAuditing
 @ComponentScan(basePackages = {"com.xtremealex.aeroport.batch.configuration", "com.xtremealex.aeroport"})
+@RegisterReflectionForBinding({ AirportJson.class })
 public class AeroportBatchApplication implements CommandLineRunner {
 
     @Autowired
