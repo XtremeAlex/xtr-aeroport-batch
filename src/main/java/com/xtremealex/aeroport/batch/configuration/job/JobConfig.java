@@ -89,6 +89,7 @@ public class JobConfig {
     @Bean
     @Qualifier("jobLauncherOld")
     public JobLauncher jobLauncherOld(final JobRepository jobRepository) {
+        //FIXME a che serve provare ad usare un metodo annotato @Deprecated???
         SimpleJobLauncher simpleJobLauncher = new SimpleJobLauncher();
         simpleJobLauncher.setTaskExecutor(new SimpleAsyncTaskExecutor());
         simpleJobLauncher.setJobRepository(jobRepository);
