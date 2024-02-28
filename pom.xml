@@ -118,7 +118,7 @@
                         <arg>
                             --verbose
                             -Dspring.aot.enabled=true
-                            -H:Name=./target/${artifactId}-app
+                            -H:Name=./target/${project.artifactId}-app
                             --initialize-at-build-time=org.slf4j.LoggerFactory,ch.qos.logback,org.slf4j.MDC,org.slf4j.impl.StaticLoggerBinder
                             -Dspring.graal.remove-unused-autoconfig=true
                         </arg>

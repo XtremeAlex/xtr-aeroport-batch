@@ -3,6 +3,7 @@ package com.xtremealex.aeroport.mapper;
 import com.xtremealex.aeroport.batch.model.AirportJson;
 import com.xtremealex.aeroport.entity.AirportEntity;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 import java.util.List;
 
@@ -13,6 +14,8 @@ public interface IAirportMapper {
 
     List<AirportEntity> countryJsonListToEntityList(List<AirportJson> airportJsonList);
 
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "airportType", ignore = true)
     AirportEntity countryJsonToEntity(AirportJson airportJson);
 
 }
