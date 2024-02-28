@@ -356,7 +356,7 @@ Per utilizzare e contribuire a questo progetto, avrai bisogno di installare:
      <img src="_assets/images/windows_benchmark.png" alt="_assets/images/windows_benchmark.png" />
 
 
-   3. **MAC** Sonoma v14.2.1 (M1 16Gb RAM) - 917%
+   3. **MAC** Sonoma v14.2.1 ( M1 16Gb RAM && M1 MAX 64gb RAM ) - 917%
      <img src="_assets/images/mac_benchmark.png" alt="_assets/images/mac_benchmark.png" />
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
