@@ -36,6 +36,10 @@ public class BatchController {
     private Job importAirportJob;
 
     @Autowired
+    @Qualifier("importContryJob")
+    private Job importContryJob;
+
+    @Autowired
     private AsyncJobService asyncJobService;
 
     @GetMapping({"/", "/progress"})
@@ -89,6 +93,7 @@ public class BatchController {
         return switch (jobName) {
             case "importAirportTypeJob" -> importAirportTypeJob;
             case "importAirportJob" -> importAirportJob;
+            case "importContryJob" -> importContryJob;
             default -> null;
         };
     }
@@ -134,7 +139,7 @@ public class BatchController {
     @GetMapping("/jobs/details")
     public ResponseEntity<List<Map<String, Object>>> listJobDetails() {
         List<Map<String, Object>> jobDetails = new ArrayList<>();
-        List<String> jobNames = Arrays.asList("importAirportTypeJob", "importAirportJob");
+        List<String> jobNames = Arrays.asList("importAirportTypeJob", "importAirportJob", "importContryJob");
 
         for (String jobName : jobNames) {
             Map<String, Object> jobInfo = getJobDetails(jobName);

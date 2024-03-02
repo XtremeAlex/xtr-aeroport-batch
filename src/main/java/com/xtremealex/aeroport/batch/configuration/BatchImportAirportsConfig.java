@@ -4,11 +4,8 @@ package com.xtremealex.aeroport.batch.configuration;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.xtremealex.aeroport.batch.model.AirportJson;
 import com.xtremealex.aeroport.batch.processor.AirportItemProcessor;
-import com.xtremealex.aeroport.batch.processor.AirportTypeItemProcessor;
 import com.xtremealex.aeroport.batch.writer.AirportItemWriter;
-import com.xtremealex.aeroport.batch.writer.AirportTypeItemWriter;
 import com.xtremealex.aeroport.entity.AirportEntity;
-import com.xtremealex.aeroport.entity.typological.AirportTypeTypology;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.batch.item.json.JacksonJsonObjectReader;
@@ -27,27 +24,24 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 @Configuration
-public class MyBatchConfig {
+public class BatchImportAirportsConfig {
 
     private final AirportItemProcessor airportItemProcessor;
-    private final AirportTypeItemProcessor airportTypeItemProcessor;
     private final AirportItemWriter airportItemWriter;
-    private final AirportTypeItemWriter airportTypeItemWriter;
 
-    @Value("${resource.dataset.airports.file.path}")
-    private String jsonFile;
+    @Value("${resource.dataset.airports.file.path-airports}")
+    private String jsonFileAirports;
 
-    public MyBatchConfig(AirportItemProcessor airportItemProcessor, AirportTypeItemProcessor airportTypeItemProcessor, AirportItemWriter airportItemWriter, AirportTypeItemWriter airportTypeItemWriter) {
+    public BatchImportAirportsConfig(AirportItemProcessor airportItemProcessor, AirportItemWriter airportItemWriter) {
         this.airportItemProcessor = airportItemProcessor;
-        this.airportTypeItemProcessor = airportTypeItemProcessor;
         this.airportItemWriter = airportItemWriter;
-        this.airportTypeItemWriter = airportTypeItemWriter;
     }
 
     //https://docs.spring.io/spring-batch/reference/readers-and-writers/item-reader-writer-implementations.html
     @Bean
-    public SynchronizedItemStreamReader<AirportJson> synchronizedItemStreamReader() throws IOException {
-        JsonItemReader<AirportJson> jsonItemReader = jsonItemReader();
+    @Qualifier("synchronizedAirportJsonItemStreamReader")
+    public SynchronizedItemStreamReader<AirportJson> synchronizedAirportJsonItemStreamReader() throws IOException {
+        JsonItemReader<AirportJson> jsonItemReader = jsonAirportItemReader();
 
         return new SynchronizedItemStreamReaderBuilder<AirportJson>()
                 .delegate(jsonItemReader)
@@ -55,9 +49,9 @@ public class MyBatchConfig {
     }
 
     @Bean
-    public JsonItemReader<AirportJson> jsonItemReader() throws IOException {
+    public JsonItemReader<AirportJson> jsonAirportItemReader() throws IOException {
 
-        Resource resource = new ClassPathResource(jsonFile);
+        Resource resource = new ClassPathResource(jsonFileAirports);
         if (!resource.exists()) {
             throw new FileNotFoundException("Impossibile trovare il file: " + resource.getURI().getPath());
         }
@@ -90,11 +84,7 @@ public class MyBatchConfig {
     }
     */
 
-    @Qualifier("airportTypeProcessor")
-    @Bean
-    public ItemProcessor<AirportJson, AirportTypeTypology> airportTypeProcessor() {
-        return airportTypeItemProcessor;
-    }
+
 
     @Qualifier("airportProcessor")
     @Bean
@@ -102,18 +92,10 @@ public class MyBatchConfig {
         return airportItemProcessor;
     }
 
-    @Qualifier("airportTypeWriter")
-    @Bean
-    public ItemWriter<AirportTypeTypology> airportTypeWriter() {
-        return airportTypeItemWriter;
-    }
-
     @Bean
     @Qualifier("airportWriter")
     public ItemWriter<AirportEntity> airportWriter() {
         return airportItemWriter;
     }
-
-
 
 }

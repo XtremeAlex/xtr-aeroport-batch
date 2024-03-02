@@ -1,4 +1,4 @@
-package com.xtremealex.aeroport.entity.typological;
+package com.xtremealex.aeroport.entity;
 
 
 import jakarta.persistence.Entity;
@@ -14,8 +14,8 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity(name = "A_T_COUNTRY")
-public class CountryTypology implements Serializable {
+@Entity(name = "A_D_COUNTRY")
+public class CountryEntity implements Serializable {
 
     private static final long serialVersionUID = 8277781389790520964L;
 

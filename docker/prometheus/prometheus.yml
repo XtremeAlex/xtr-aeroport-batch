@@ -1,0 +1,12 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'xtr-aeroport-batch'
+    # Path esposte da Spring Boot Actuator configurate sul MS Batch.
+    metrics_path: '/xtr-aeroport-batch/actuator/prometheus'
+    static_configs:
+      # Sto usando host.docker.internal per Docker su Windows/Mac, se non funziona usa l'IP nella intranet dove è esposto il microservizio.
+#      - targets: ['host.docker.internal:8081']
+      - targets: ['192.168.188.65:8081']
+

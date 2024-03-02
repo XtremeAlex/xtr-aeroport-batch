@@ -30,8 +30,8 @@ CREATE TABLE IF NOT EXISTS aeroport.A_D_AIRPORT (
     FOREIGN KEY (id_airport_type) REFERENCES aeroport.A_T_AIRPORT_TYPE(id)
     );
 
-CREATE TABLE IF NOT EXISTS  aeroport.A_T_COUNTRY (
-    id BIGINT PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS  aeroport.A_D_COUNTRY (
+    id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     iso_country VARCHAR(10),
     description VARCHAR(255),

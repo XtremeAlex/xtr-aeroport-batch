@@ -42,4 +42,13 @@ resource:
   dataset:
     airports:
       file:
-        path: dataset/airports/world-airport.json
+        path-airports: dataset/airports/world-airport.json
+        path-countries: dataset/country/countries-flag.json
+
+# Spring Boot Actuator (Metriche)  http://127.0.0.1:8081/xtr-aeroport-batch/actuator/prometheus
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
