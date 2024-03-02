@@ -28,6 +28,7 @@ public class JobConfig {
         this.jobRepository = jobRepository;
     }
 
+    //TODO: futura implementazione o sperimentazione
     //@Bean
     public Map<String, Job> jobs(
             @Qualifier("importAirportTypeJob") Job importAirportTypeJob,
@@ -41,7 +42,7 @@ public class JobConfig {
     @Bean
     @Qualifier("processJob")
     public Job processJob(
-            @Qualifier("countObjJson") Step step0,
+            @Qualifier("countAirportsJson") Step step0,
             @Qualifier("step1") Step step1,
             @Qualifier("step2") Step step2) {
         return new JobBuilder("processJob", jobRepository)
@@ -54,7 +55,7 @@ public class JobConfig {
 
     @Bean
     @Qualifier("countObjJsonJob")
-    public Job countObjJsonJob(@Qualifier("countObjJson") Step step0) {
+    public Job countObjJsonJob(@Qualifier("countAirportsJson") Step step0) {
         return new JobBuilder("countObjJsonJob", jobRepository)
                 .start(step0)
                 .incrementer(new RunIdIncrementer())
@@ -65,7 +66,7 @@ public class JobConfig {
     @Bean
     @Qualifier("importAirportTypeJob")
     public Job importAirportTypeJob(
-            @Qualifier("countObjJson") Step step0,
+            @Qualifier("countAirportsJson") Step step0,
             @Qualifier("step1") Step step1) {
         return new JobBuilder("importAirportTypeJob", jobRepository)
                 .start(step0)
@@ -77,8 +78,8 @@ public class JobConfig {
     @Bean
     @Qualifier("importAirportJob")
     public Job importAirportJob(
-            @Qualifier("step2")Step step2,
-            @Qualifier("countObjJson") Step step0) {
+            @Qualifier("countAirportsJson") Step step0,
+            @Qualifier("step2") Step step2) {
         return new JobBuilder("importAirportJob", jobRepository)
                 .start(step0)
                 .next(step2)
@@ -86,8 +87,23 @@ public class JobConfig {
                 .build();
     }
 
+    // Importa tutti i paesi del mondo, mi servono per la GUI
+    @Bean
+    @Qualifier("importContryJob")
+    public Job importContryJob(
+            @Qualifier("countCountriesJson") Step step0,
+            @Qualifier("step3") Step step3) {
+        return new JobBuilder("importContryJob", jobRepository)
+                .start(step0)
+                .next(step3)
+                .incrementer(new RunIdIncrementer())
+                .build();
+    }
+
+    /*
     @Bean
     @Qualifier("jobLauncherOld")
+    @Deprecated
     public JobLauncher jobLauncherOld(final JobRepository jobRepository) {
         //FIXME a che serve provare ad usare un metodo annotato @Deprecated???
         SimpleJobLauncher simpleJobLauncher = new SimpleJobLauncher();
@@ -95,6 +111,7 @@ public class JobConfig {
         simpleJobLauncher.setJobRepository(jobRepository);
         return simpleJobLauncher;
     }
+    */
 
     @Bean
     public JobLauncher jobLauncher(final JobRepository jobRepository) throws BatchConfigurationException {
