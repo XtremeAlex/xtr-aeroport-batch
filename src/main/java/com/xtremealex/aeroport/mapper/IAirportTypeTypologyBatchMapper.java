@@ -8,7 +8,7 @@ import org.mapstruct.Mapping;
 import java.util.List;
 
 @Mapper(componentModel = "spring")
-public interface IAirportTypeTypologyMapper {
+public interface IAirportTypeTypologyBatchMapper {
 
     //IAirportTypeTypologyMapper INSTANCE = Mappers.getMapper(IAirportTypeTypologyMapper.class);
     List<AirportTypeTypology> countryJsonListToEntityList(List<AirportJson> airportJsonList);

@@ -2,7 +2,7 @@ package com.xtremealex.aeroport.batch.processor;
 
 import com.xtremealex.aeroport.batch.model.AirportJson;
 import com.xtremealex.aeroport.entity.AirportEntity;
-import com.xtremealex.aeroport.mapper.IAirportMapper;
+import com.xtremealex.aeroport.mapper.IAirportBatchMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.item.ItemProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ import java.nio.charset.StandardCharsets;
 public class AirportItemProcessor implements ItemProcessor<AirportJson, AirportEntity> {
 
     @Autowired
-    private IAirportMapper airportMapper;
+    private IAirportBatchMapper airportMapper;
 
     @Override
     public AirportEntity process(AirportJson airportJson) {
@@ -30,6 +30,10 @@ public class AirportItemProcessor implements ItemProcessor<AirportJson, AirportE
     }
 
     public String fixEncoding(String value) {
+        return getString(value);
+    }
+
+    static String getString(String value) {
         if (value == null) {
             return null;
         }

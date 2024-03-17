@@ -8,7 +8,7 @@ import org.mapstruct.Mapping;
 import java.util.List;
 
 @Mapper(componentModel = "spring")
-public interface ICountryMapper {
+public interface ICountryBatchMapper {
     //ICountryTypologyMapper INSTANCE = Mappers.getMapper(ICountryTypologyMapper.class);
 
     List<CountryEntity> countryJsonListToEntityList(List<CountryJson> countryJsonList);
