@@ -8,7 +8,7 @@ import org.mapstruct.Mapping;
 import java.util.List;
 
 @Mapper(componentModel = "spring")
-public interface IAirportMapper {
+public interface IAirportBatchMapper {
 
     //IAirportMapper INSTANCE = Mappers.getMapper(IAirportMapper.class);
 

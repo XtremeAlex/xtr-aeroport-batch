@@ -2,9 +2,7 @@ package com.xtremealex.aeroport.batch.processor;
 
 import com.xtremealex.aeroport.batch.model.AirportJson;
 import com.xtremealex.aeroport.batch.service.AirportTypeCacheService;
-import com.xtremealex.aeroport.entity.AirportEntity;
 import com.xtremealex.aeroport.entity.typological.AirportTypeTypology;
-import com.xtremealex.aeroport.mapper.IAirportMapper;
 import com.xtremealex.aeroport.repository.AirportTypeRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.batch.item.ItemProcessor;
