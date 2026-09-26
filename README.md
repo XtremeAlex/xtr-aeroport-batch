@@ -190,7 +190,7 @@ Se hai un suggerimento, apri pure una issue con il tag appropriato. E non diment
 
 ## License
 
-Distribuito sotto licenza Apache 2.0. Vedi il file [`LICENSE`](LICENSE) per i dettagli.
+Distribuito con doppia licenza: **GNU AGPL-3.0** (vedi [`LICENSE`](LICENSE)) per uso open source, e **licenza commerciale** per uso in prodotti proprietari (vedi [`COMMERCIAL-LICENSE.md`](COMMERCIAL-LICENSE.md)).
 
 ## Contatti
 
