@@ -10,6 +10,21 @@
 
 Microservizio batch che importa dati di aeroporti e paesi da sorgenti JSON e li migra, in più step, verso una banca dati relazionale.
 
+<details>
+  <summary>Sommario</summary>
+  <ol>
+    <li><a href="#info-sul-progetto">Info sul progetto</a></li>
+    <li><a href="#stack-tecnologico">Stack tecnologico</a></li>
+    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#play--test">Play &amp; Test</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#come-contribuire">Come contribuire</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contatti">Contatti</a></li>
+    <li><a href="#ringraziamenti">Ringraziamenti</a></li>
+  </ol>
+</details>
+
 ## Info sul progetto
 
 Questo progetto nasce come piattaforma sperimentale personale per mettere alla prova tecnologie e framework moderni in un contesto realistico. L'obiettivo è fornire una base solida e "enterprise like" per l'importazione batch di informazioni su aeroporti e rotte aeree verso un database relazionale.
@@ -18,10 +33,13 @@ Questo progetto nasce come piattaforma sperimentale personale per mettere alla p
 
 Fa parte della suite `xtr-aeroport-*`:
 
-- `xtr-aeroport-ms` — microservizio di accesso ai dati
-- `xtr-aeroport-batch` — import massivo dati (questo modulo)
-- `xtr-aeroport-typological` — dati tipologici
-- `xtr-aeroport-common-lib` — libreria condivisa
+| Modulo | Ruolo |
+|---|---|
+| [`xtr-aeroport-ms`](https://github.com/XtremeAlex/xtr-aeroport-ms) | Microservizio di ricerca aeroporti |
+| [`xtr-aeroport-batch`](https://github.com/XtremeAlex/xtr-aeroport-batch) | Import massivo dati (questo modulo) |
+| [`xtr-aeroport-typological`](https://github.com/XtremeAlex/xtr-aeroport-typological) | Servizio dati tipologici |
+| [`xtr-aeroport-common-lib`](https://github.com/XtremeAlex/xtr-aeroport-common-lib) | Libreria condivisa |
+| [`xtr-aeroport-web-java`](https://github.com/XtremeAlex/xtr-aeroport-web-java) | Frontend web |
 
 ## Stack tecnologico
 
@@ -199,3 +217,14 @@ Distribuito con doppia licenza: **GNU AGPL-3.0** (vedi [`LICENSE`](LICENSE)) per
 ## Contatti
 
 Andrei Alexandru Dabija — [LinkedIn](https://www.linkedin.com/in/andrei-alexandru-dabija/) — [github.com/XtremeAlex](https://github.com/XtremeAlex)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Ringraziamenti
+
+- [Spring Boot](https://spring.io/projects/spring-boot) e [Spring Batch](https://spring.io/projects/spring-batch)
+- [GraalVM](https://www.graalvm.org/) per la compilazione nativa
+- [Micrometer](https://micrometer.io/) + [Prometheus](https://prometheus.io/) e [Grafana](https://grafana.com/) per l'osservabilità
+- [Best-README-Template](https://github.com/othneildrew/Best-README-Template) come ispirazione per la struttura
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
