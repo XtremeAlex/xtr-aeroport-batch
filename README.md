@@ -1,7 +1,9 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <img src="_assets/images/logo.png" width="500" alt="Logo">
+  <img src="_assets/images/banner-dark.png" alt="Aeroport Batch" width="100%">
+  <br /><br />
+  <img src="_assets/images/logo.png" width="400" alt="Logo">
 </div>
 
 # xtr-aeroport-batch
@@ -94,6 +96,8 @@ java -agentlib:native-image-agent=config-output-dir=src/main/resources/META-INF/
 ```
 
 I file `.json` finiscono in `src/main/resources/META-INF/native-image/`; da qui il `native-maven-plugin` li rileva automaticamente, senza bisogno di `buildArg` espliciti.
+
+<img src="_assets/images/run-agentlib.png" alt="Generazione metadati con native-image-agent" />
 
 **2. Compilare l'immagine nativa**
 
