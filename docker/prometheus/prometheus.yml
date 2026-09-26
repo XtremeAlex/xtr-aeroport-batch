@@ -6,7 +6,7 @@ scrape_configs:
     # Path esposte da Spring Boot Actuator configurate sul MS Batch.
     metrics_path: '/xtr-aeroport-batch/actuator/prometheus'
     static_configs:
-      # Sto usando host.docker.internal per Docker su Windows/Mac, se non funziona usa l'IP nella intranet dove è esposto il microservizio.
-#      - targets: ['host.docker.internal:8081']
+      # host.docker.internal funziona per Docker su Windows/Mac. In alternativa usa
+      # l'host/IP dove e esposto il microservizio (non committare IP di rete reali).
       - targets: ['host.docker.internal:8081']
 
