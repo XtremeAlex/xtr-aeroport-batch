@@ -63,3 +63,29 @@ build/
 ### NO LOG ###
 logs/
 var/
+
+### OS ###
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+### GraalVM native-image dump / report ###
+*-dump/
+*-dump.bgv
+reports/
+!src/main/resources/META-INF/native-image/
+
+### Env / secrets locali ###
+.env
+.env.*
+!.env.example
+*.local
+secrets.properties
+application-local.yml
+application-local.yaml
+application-local.properties

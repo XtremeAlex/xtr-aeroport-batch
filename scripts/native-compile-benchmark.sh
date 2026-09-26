@@ -31,7 +31,7 @@ calcola_tempo $start_time $end_time
 
 echo "Generazione conf native-image"
 start_time=$(date +%s)
-java -agentlib:native-image-agent=config-output-dir=src/main/resources/META-INF/native-image -jar ./target/*.jar com.xtremealex.aeroport.AeroportApplication &
+java -agentlib:native-image-agent=config-output-dir=src/main/resources/META-INF/native-image -jar ./target/*.jar com.xtremealex.aeroport.AeroportBatchApplication &
 
 JAVA_PID=$!
 sleep 120
@@ -52,7 +52,7 @@ end_time_totale=$(date +%s)
 echo -n "Tempo totale impiegato: "
 calcola_tempo $start_time_totale $end_time_totale
 
-echo "Fine Build; lancia ./target/aeroport"
+echo "Fine Build; lancia ./target/aeroport-batch-app"
 echo "Compilare una Docker Img"
 echo "> mvn package -DskipTests -Pdocker-m1-arm"
 echo "oppure usare il docker-compose.yml"
