@@ -8,38 +8,50 @@
 
 # xtr-aeroport-batch
 
-Microservizio batch che importa dati di aeroporti e paesi da sorgenti JSON e li migra, in più step, verso una banca dati relazionale.
+Il batch che carica i dati di aeroporti e paesi della suite Aeroport. Parte da file JSON e, un passo alla volta, li porta in un database relazionale.
+
+> Stato: attivo, come strumento offline. Lo si lancia una volta, su un PC con un po' di potenza, e produce i dati che poi usa l'API. Non gira sul Raspberry Pi.
+
+Dentro convivono due cose:
+
+- l'applicazione Spring Batch storica (Java 17, Spring Boot 3.2.1, PostgreSQL), rimasta com'era nel 2024 a parte il riordino del 2026;
+- lo script `tools/build-sqlite.py`, aggiunto più di recente, che genera il file `aeroport.sqlite` di sola lettura usato da `xtr-aeroport-api-spring`.
 
 <details>
   <summary>Sommario</summary>
   <ol>
-    <li><a href="#info-sul-progetto">Info sul progetto</a></li>
+    <li><a href="#perché-esiste">Perché esiste</a></li>
+    <li><a href="#la-suite">La suite</a></li>
     <li><a href="#stack-tecnologico">Stack tecnologico</a></li>
-    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#per-iniziare">Per iniziare</a></li>
+    <li><a href="#generare-il-database-sqlite-per-lapi">Generare il database SQLite per l'API</a></li>
     <li><a href="#play--test">Play &amp; Test</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#come-contribuire">Come contribuire</a></li>
-    <li><a href="#license">License</a></li>
+    <li><a href="#licenza">Licenza</a></li>
     <li><a href="#contatti">Contatti</a></li>
     <li><a href="#ringraziamenti">Ringraziamenti</a></li>
   </ol>
 </details>
 
-## Info sul progetto
+## Perché esiste
 
-Questo progetto nasce come piattaforma sperimentale personale per mettere alla prova tecnologie e framework moderni in un contesto realistico. L'obiettivo è fornire una base solida e "enterprise like" per l'importazione batch di informazioni su aeroporti e rotte aeree verso un database relazionale.
+È un progetto personale nato per provare tecnologie e framework recenti su un caso concreto, invece che sui soliti esempi giocattolo. L'idea era costruire una base solida, con un'impostazione da progetto aziendale, per importare in blocco informazioni su aeroporti e rotte aeree dentro un database relazionale.
 
-È uno dei moduli di una serie più ampia, pensata per essere condivisa e arricchita con il contributo della community.
+È uno dei moduli di una serie più ampia, che ho pubblicato perché chiunque possa usarla e migliorarla.
 
-Fa parte della suite `xtr-aeroport-*`:
+## La suite
 
-| Modulo | Ruolo |
-|---|---|
-| [`xtr-aeroport-ms`](https://github.com/XtremeAlex/xtr-aeroport-ms) | Microservizio di ricerca aeroporti |
-| [`xtr-aeroport-batch`](https://github.com/XtremeAlex/xtr-aeroport-batch) | Import massivo dati (questo modulo) |
-| [`xtr-aeroport-typology`](https://github.com/XtremeAlex/xtr-aeroport-typology) | Servizio dati tipologici |
-| [`xtr-aeroport-common-lib`](https://github.com/XtremeAlex/xtr-aeroport-common-lib) | Libreria condivisa |
-| [`xtr-aeroport-web-java`](https://github.com/XtremeAlex/xtr-aeroport-web-java) | Frontend web |
+| Modulo | A cosa serve | Stato |
+|---|---|---|
+| `xtr-aeroport-api-spring` | API unica per aeroporti, tipologie, paesi e messaggi EDIFACT (non ancora pubblicata su GitHub) | Attivo |
+| `xtr-aeroport-api-quarkus` | Porting della stessa API su Quarkus (non ancora pubblicato su GitHub) | Sperimentale |
+| `xtr-aeroport-edifact-spring-web` | Console web EDIFACT, ha preso il posto di `xtr-aeroport-web-java` (non ancora pubblicata su GitHub) | Attivo |
+| [`xtr-aeroport-batch`](https://github.com/XtremeAlex/xtr-aeroport-batch) | Import massivo dei dati (questo modulo) | Attivo, offline |
+| [`xtr-aeroport-common-lib`](https://github.com/XtremeAlex/xtr-aeroport-common-lib) | Libreria condivisa | Legacy |
+| [`xtr-aeroport-ms`](https://github.com/XtremeAlex/xtr-aeroport-ms) | Microservizio di ricerca aeroporti | Deprecato |
+| [`xtr-aeroport-typology`](https://github.com/XtremeAlex/xtr-aeroport-typology) | Servizio dati tipologici | Deprecato |
+| [`xtr-aeroport-web-java`](https://github.com/XtremeAlex/xtr-aeroport-web-java) | Frontend web | Deprecato |
 
 ## Stack tecnologico
 
@@ -49,18 +61,18 @@ Fa parte della suite `xtr-aeroport-*`:
 - MapStruct, Lombok
 - Micrometer + Prometheus, Grafana
 - Docker, Helm / Kubernetes
-- Linux, macOS, Windows
+- Python 3 per lo script che genera il database SQLite
+- Gira su Linux, macOS e Windows
 
-## Getting Started
+## Per iniziare
+Si compila con Maven. Il progetto è su Spring Boot 3 e Java 17 e si avvia tranquillamente in locale.
 
-Il progetto usa Maven per dipendenze e build. È sviluppato con Spring Boot 3 e Java 17 e può essere avviato e testato in locale.
-
-### Prerequisiti
+### Cosa serve
 
 - Git (>= 2.43)
-- GraalVM JDK 17 (per la build nativa) oppure un JDK 17 qualsiasi (per la build JVM)
-- Maven (>= 3.9.6) — oppure il wrapper `./mvnw` incluso
-- Docker (per il database e le build containerizzate)
+- GraalVM JDK 17 per la build nativa, oppure un qualsiasi JDK 17 per la build JVM
+- Maven (>= 3.9.6), oppure il wrapper `./mvnw` già incluso
+- Docker, per il database e per le build in container
 
 ### Coordinate del progetto
 
@@ -98,7 +110,7 @@ java -jar ./target/aeroport-batch-0.3.0.jar
 
 <img src="_assets/images/mvn-build.png" alt="Build Maven" />
 
-Poi apri il browser su: <http://localhost:8081/xtr-aeroport-batch/progress>
+A questo punto apri <http://localhost:8081/xtr-aeroport-batch/progress> e segui l'avanzamento dei job.
 
 <img src="_assets/images/run-by-graal-jdk17.png" alt="Avvio applicazione" />
 
@@ -106,14 +118,14 @@ Poi apri il browser su: <http://localhost:8081/xtr-aeroport-batch/progress>
 
 **1. Generare i metadati di reflection**
 
-La native image lavora a closed-world: reflection, proxy, risorse e serializzazione dinamiche vanno dichiarate a build time. Il `native-image-agent` genera questi metadati eseguendo prima il jar sulla JVM ed esercitando i vari percorsi dell'applicazione.
+La native image ragiona "a mondo chiuso": reflection, proxy, risorse e serializzazione dinamica vanno dichiarati prima, in fase di build. Ci pensa il `native-image-agent`: si avvia il jar sulla JVM, si usano i vari percorsi dell'applicazione e l'agent annota tutto quello che serve.
 
 ```bash
 java -agentlib:native-image-agent=config-output-dir=src/main/resources/META-INF/native-image \
   -jar ./target/aeroport-batch-0.3.0.jar
 ```
 
-I file `.json` finiscono in `src/main/resources/META-INF/native-image/`; da qui il `native-maven-plugin` li rileva automaticamente, senza bisogno di `buildArg` espliciti.
+I file `.json` generati finiscono in `src/main/resources/META-INF/native-image/`. Il `native-maven-plugin` li trova da solo lì, quindi non serve aggiungere `buildArg` espliciti.
 
 <img src="_assets/images/run-agentlib.png" alt="Generazione metadati con native-image-agent" />
 
@@ -125,7 +137,7 @@ I file `.json` finiscono in `src/main/resources/META-INF/native-image/`; da qui 
 
 <img src="_assets/images/native-mvn-build.png" alt="Build nativa" />
 
-Il binario viene prodotto in `./target/aeroport-batch-app` (su Windows con estensione `.exe`).
+Il binario esce in `./target/aeroport-batch-app` (su Windows con estensione `.exe`).
 
 <img src="_assets/images/native-macos-result-build.png" alt="Risultato build macOS" />
 <img src="_assets/images/native-windows-result-build.png" alt="Risultato build Windows" />
@@ -136,15 +148,15 @@ Il binario viene prodotto in `./target/aeroport-batch-app` (su Windows con esten
 ./target/aeroport-batch-app
 ```
 
-**Note su ARM64 (Apple Silicon)**
+**Se sei su ARM64 (Apple Silicon)**
 
-Su Apple M1/M2 (Aarch64) quasi tutte le funzionalità GraalVM sono supportate, con alcune limitazioni ([riferimento GraalVM](https://www.graalvm.org/reference-manual/native-image/)):
+Su Apple M1/M2 (Aarch64) GraalVM supporta quasi tutto, con qualche eccezione ([riferimento GraalVM](https://www.graalvm.org/reference-manual/native-image/)):
 
-- `WriteableCodeCache` deve essere disabilitato.
-- `--libc=musl` non è supportato.
-- Il Garbage Collector G1 non è supportato.
+- `WriteableCodeCache` va disabilitato;
+- `--libc=musl` non è supportato;
+- il Garbage Collector G1 non è supportato.
 
-**Recap dei comandi**
+**Tutti i comandi in fila**
 
 ```bash
 ./mvnw clean
@@ -156,7 +168,7 @@ java -agentlib:native-image-agent=config-output-dir=src/main/resources/META-INF/
 
 ### Build Docker
 
-Build dell'immagine tramite buildpacks (profili per architettura):
+L'immagine si costruisce con i buildpacks, con un profilo per ogni architettura:
 
 ```bash
 # Apple Silicon (ARM64)
@@ -166,7 +178,7 @@ Build dell'immagine tramite buildpacks (profili per architettura):
 ./mvnw package -DskipTests -Pdocker-x86
 ```
 
-Esecuzione del container:
+E per avviare il container:
 
 ```bash
 docker run -p 8081:8081 artifactory.io/k8s-test/namespace/com.xtremealex/aeroport-batch:0.3.0
@@ -174,9 +186,22 @@ docker run -p 8081:8081 artifactory.io/k8s-test/namespace/com.xtremealex/aeropor
 
 <img src="_assets/images/native-docker-arm-build.png" alt="Build Docker ARM" />
 
+## Generare il database SQLite per l'API
+
+L'API attuale (`xtr-aeroport-api-spring`) non legge PostgreSQL: usa un file SQLite di sola lettura, pensato per stare leggero su un Raspberry Pi. Quel file lo produce `tools/build-sqlite.py`, sempre offline e una volta sola. Lo script legge i dataset JSON e crea `aeroport.sqlite` con lo schema e gli indici che l'API si aspetta.
+
+```bash
+python3 tools/build-sqlite.py \
+    --airports src/main/resources/dataset/airports/world-airport.json \
+    --countries src/main/resources/dataset/country/countries-flag.json \
+    --out target/aeroport.sqlite
+```
+
+Il file risultante va copiato sul Raspberry Pi e montato in sola lettura nel container dell'API.
+
 ## Play & Test
 
-- Dashboard job: <http://127.0.0.1:8081/xtr-aeroport-batch/progress>
+- Dashboard dei job: <http://127.0.0.1:8081/xtr-aeroport-batch/progress>
 - Metriche Prometheus: <http://127.0.0.1:8081/xtr-aeroport-batch/actuator/prometheus>
 
 ### Benchmark
@@ -193,38 +218,36 @@ docker run -p 8081:8081 artifactory.io/k8s-test/namespace/com.xtremealex/aeropor
 - [x] Controller REST
 - [x] Dashboard HTML di avanzamento
 - [x] Dockerfile e docker-compose per GraalVM JDK 17 (JVM, nativo macOS, nativo Windows)
+- [x] Generazione del database SQLite di sola lettura per l'API
 - [ ] Profilo OpenJDK 17
 - [ ] Suite di test e raccolta delle statistiche
 
-Consulta le [open issues](https://github.com/XtremeAlex/xtr-aeroport-batch/issues) per l'elenco completo di feature proposte e bug noti.
+L'elenco completo di idee e bug noti è nelle [open issues](https://github.com/XtremeAlex/xtr-aeroport-batch/issues).
 
 ## Come contribuire
 
-I contributi sono ciò che rende la community open source un posto straordinario per imparare e creare. Ogni contributo è molto apprezzato.
+Ogni contributo è ben accetto, anche piccolo. Il giro è quello classico:
 
-1. Fai un fork del progetto
-2. Crea il tuo feature branch (`git checkout -b feature/nome-feature`)
-3. Fai commit delle modifiche (`git commit -m "Aggiunge nome-feature"`)
-4. Fai push sul branch (`git push origin feature/nome-feature`)
-5. Apri una Pull Request
+1. fai un fork del progetto;
+2. crea un branch per la tua modifica (`git checkout -b feature/nome-feature`);
+3. fai commit (`git commit -m "Aggiunge nome-feature"`);
+4. fai push del branch (`git push origin feature/nome-feature`);
+5. apri una Pull Request.
 
-Se hai un suggerimento, apri pure una issue con il tag appropriato. E non dimenticare di mettere una stella al progetto!
+Se hai solo un'idea, apri una issue con l'etichetta giusta. E se il progetto ti è utile, una stella fa sempre piacere.
 
-## License
-
-Distribuito con doppia licenza: **GNU AGPL-3.0** (vedi [`LICENSE`](LICENSE)) per uso open source, e **licenza commerciale** per uso in prodotti proprietari (vedi [`COMMERCIAL-LICENSE.md`](COMMERCIAL-LICENSE.md)).
+## Licenza
+Doppia licenza: **GNU AGPL-3.0** (vedi [`LICENSE`](LICENSE)) per l'uso open source, e **licenza commerciale** per l'uso dentro prodotti proprietari (vedi [`COMMERCIAL-LICENSE.md`](COMMERCIAL-LICENSE.md)).
 
 ## Contatti
 
-Andrei Alexandru Dabija — [LinkedIn](https://www.linkedin.com/in/andrei-alexandru-dabija/) — [github.com/XtremeAlex](https://github.com/XtremeAlex)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Andrei Alexandru Dabija · [LinkedIn](https://www.linkedin.com/in/andrei-alexandru-dabija/) · [github.com/XtremeAlex](https://github.com/XtremeAlex)
 
 ## Ringraziamenti
 
 - [Spring Boot](https://spring.io/projects/spring-boot) e [Spring Batch](https://spring.io/projects/spring-batch)
 - [GraalVM](https://www.graalvm.org/) per la compilazione nativa
 - [Micrometer](https://micrometer.io/) + [Prometheus](https://prometheus.io/) e [Grafana](https://grafana.com/) per l'osservabilità
-- [Best-README-Template](https://github.com/othneildrew/Best-README-Template) come ispirazione per la struttura
+- [Best-README-Template](https://github.com/othneildrew/Best-README-Template), da cui ho preso spunto per la struttura
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">torna su</a>)</p>
